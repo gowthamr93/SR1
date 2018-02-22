@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:colors="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Views.AddNewCasePointOnMapView"
+              xmlns:btn="clr-namespace:ServiceRequest.Custom;assembly=ServiceRequest"  >
+
+  <Grid x:Name="GlMain"  >
+    <Grid.RowDefinitions>
+      <RowDefinition Height="7.7*"/>
+      <RowDefinition Height="87.7*"/>
+      <RowDefinition Height="4.5*"/>
+    </Grid.RowDefinitions>
+
+    <Grid.RowSpacing>
+      <OnPlatform x:TypeArguments="x:Double" Android="0" WinPhone="0" iOS="0"/>
+    </Grid.RowSpacing>
+    
+
+    <!--Header Grid-->
+    <Grid Grid.Row="0" Grid.Column="0"  BackgroundColor="#0c74c1">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="12*"/>
+        <ColumnDefinition Width="76*"/>
+        <ColumnDefinition Width="12*"/>
+      </Grid.ColumnDefinitions>
+      <BoxView x:Name="BxVw_Cancel" Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+      <Label x:Name="LblCancel"  BackgroundColor="Transparent" Text="Cancel" FontSize="{x:Static colors:FontSizeView.CustomFontSizeMeMeMi}"
+                   HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center"
+                   TextColor="White" Grid.Row="0" Grid.Column="0"/>
+
+      <Label x:Name="lblTitleName"  BackgroundColor="Transparent" Text="Choose Preferred Location" FontSize="{x:Static colors:FontSizeView.CustomFontSizeMeMeMi}" FontAttributes="Bold"
+             HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center"
+             TextColor="White" Grid.Row="0" Grid.Column="1"/>
+
+    </Grid>
+    <!--Header Grid-->
+    <Grid x:Name="GlMapView" Grid.Column="0" Grid.Row="1" />
+    <btn:SRiButton x:Name="BtnSkipLocation" Text="Skip" FontAttributes="Bold"  TextColor="{x:Static colors:Styles.MainAccent}"
+                     BackgroundColor="White" HorizontalOptions="EndAndExpand" Grid.Column="0" Grid.Row="2" VerticalOptions="FillAndExpand"  >
+      <btn:SRiButton.FontSize>
+        <OnPlatform x:TypeArguments="x:Double" Android="9" WinPhone="14" iOS="14"/>
+      </btn:SRiButton.FontSize>
+      <btn:SRiButton.WidthRequest>
+        <OnPlatform x:TypeArguments="x:Double" Android="50" WinPhone="50" iOS="50"/>
+      </btn:SRiButton.WidthRequest>
+      <btn:SRiButton.Margin>
+        <OnPlatform x:TypeArguments="Thickness" Android="0,0,5,-4" WinPhone="0,0,5,0" iOS="0,0,5,0"/>
+      </btn:SRiButton.Margin>
+    </btn:SRiButton>
+  
+
+  </Grid>
+
+</ContentView>

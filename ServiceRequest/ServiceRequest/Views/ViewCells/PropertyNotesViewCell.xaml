@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ServiceRequest.Views.ViewCells.PropertyNotesViewCell"
+             xmlns:colors="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest">
+
+  <StackLayout x:Name="Sl_Notes" Spacing="0" BackgroundColor="White" Orientation="Vertical" VerticalOptions="Start" >
+
+    <Grid Padding="0,5,0,5">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="25*"/>
+        <ColumnDefinition Width="74*"/>
+      </Grid.ColumnDefinitions>
+      <Label Text="Summary" Grid.Column="1" VerticalOptions="Center" TextColor="{x:Static colors:Styles.MediumText}"/>
+      <Label x:Name="Lbl_Summary" VerticalOptions="StartAndExpand" Grid.Column="2" TextColor="Black"/>
+    </Grid>
+
+    <BoxView x:Name="Box_View" Margin="15,0,0,0" BackgroundColor="{x:Static colors:Styles.GroupedTableSeparator}"
+             HeightRequest="1.0"/>
+
+    <Grid Padding="0,5,0,5">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="25*"/>
+        <ColumnDefinition Width="74*"/>
+      </Grid.ColumnDefinitions>
+      <Label Text="Text" Grid.Column="1" VerticalOptions="Center" TextColor="{x:Static colors:Styles.MediumText}"/>
+      <Label x:Name="Lbl_Text" VerticalOptions="CenterAndExpand" Grid.Column="2" TextColor="Black"/>
+    </Grid>
+  </StackLayout>
+
+
+  <StackLayout x:Name="Sl_Main" Spacing="10" Padding="10">
+  </StackLayout>
+
+</ContentView>

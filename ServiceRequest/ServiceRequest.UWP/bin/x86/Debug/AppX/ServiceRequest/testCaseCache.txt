@@ -1,0 +1,383 @@
+{  
+  "properties":[  
+    {  
+      "requestGroups":[  
+        {  
+          "name":"Taxi Driver",
+          "groupType":"TXDRVR",
+          "records":[  
+            {  
+              "id":"",
+              "organisation":"",
+              "received":"",
+              "version":"",
+              "record":{  
+                "modified":false,
+                "srrec0keyval":"N8WYPT0002U00",
+                "srrec0refval":"14/00034/TXDRVR",
+                "srrec0u_version":"*",
+                "srrec0prkeyval":"0000S700DT000",
+                "srrec0address":"6 Shelone Road\rNeath\rWest Glamorgan\rSA11 2PS",
+                "srrec0contact":"Anonymous Call",
+                "srrec0mapeast":"273754",
+                "srrec0mapnorth":"194318",
+                "srrec0latitude":51.634197,
+                "srrec0longitude":-3.825301,
+                "srrec0recepd":"2014-07-18T16:22:00+01:00",
+                "srrec0targrespd":"2014-07-21T00:00:00+01:00",
+                "srrec0details":"Reported to have damage to car \rHarry Chambers driver",
+                "srrec0srrectype":"TXDRVR",
+                "srrec0srstat":"7_RSL",
+                "srrec0xbsubsys":"LI",
+                "srrec0xbkeyval":"O4WDXH0002V00",
+                "srxtra":[  
+                  {  
+                    "modified":false,
+                    "srxtra0keyval":"N8WYQR0002U00",
+                    "srrec0keyval":"N8WYPT0002U00",
+                    "srxtra0u_version":"!",
+                    "srxtra0seqno":"1.0",
+                    "srxtra0flabel":"Is he licensed",
+                    "srxtra0fname":"LIC",
+                    "srxtra0ftype":"TEXT"
+                  },
+                  {  
+                    "modified":false,
+                    "srxtra0keyval":"N8WYQR0002U01",
+                    "srrec0keyval":"N8WYPT0002U00",
+                    "srxtra0u_version":"!",
+                    "srxtra0seqno":"2.0",
+                    "srxtra0flabel":"Licence No",
+                    "srxtra0fname":"LICNO",
+                    "srxtra0ftype":"TEXT"
+                  }
+                ],
+                "pclocn":[  
+
+                ],
+                "srcustomer":[  
+
+                ],
+                "xirec":[  
+                  {  
+                    "modified":false,
+                    "xirec0keyval":"N8WYQD0002U00",
+                    "xirec0u_version":"'",
+                    "xirec0mdkeyval":"N8WYPT0002U00",
+                    "xirec0mdsubsys":"SR",
+                    "xirec0refval":"14/00061/XCOMP",
+                    "xirec0prkeyval":"0000S700DT000",
+                    "xirec0xirectype":"XCOMP",
+                    "xirec0xistat":"1_VIS",
+                    "xirec0groupmod":"LI",
+                    "xrrec":[  
+
+                    ],
+                    "xivisit0xikeyval":[  
+                      "N8WYZA0002U00",
+                      "ND0WA60001200"
+                    ],
+                    "visits":[  
+                      {  
+                        "id":"",
+                        "organisation":"",
+                        "received":"",
+                        "status":0,
+                        "version":"",
+                        "visit":{  
+                          "modified":false,
+                          "xivisit0keyval":"N8WYZA0002U00",
+                          "xivisit0u_version":"!",
+                          "xivisit0mdsubsys":"SR",
+                          "srrec0keyval":"N8WYPT0002U00",
+                          "xirec0keyval":"N8WYQD0002U00",
+                          "xivisit0voff":"HO",
+                          "xivisit0idoxid":"VEH",
+                          "xivisit0xivtype":"VEH",
+                          "xivisit_comments":[  
+
+                          ],
+                          "xipcwork":[  
+
+                          ],
+                          "xiaction":[  
+                            {  
+                              "modified":false,
+                              "xiaction0keyval":"N8WYZU0002U00",
+                              "xivisit0keyval":"N8WYZA0002U00",
+                              "xiaction0u_version":"!",
+                              "xiaction0mdkeyval":"N8WYPT0002U00",
+                              "xiaction0mdsubsys":"SR",
+                              "xiaction0duedate":"2014-07-18T00:00:00+01:00",
+                              "xiaction0xiact":"APPOIN",
+                              "xiaction0actoff":"LI",
+                              "xiactpara":[  
+
+                              ],
+                              "status":0
+                            },
+                            {  
+                              "modified":false,
+                              "xiaction0keyval":"N8WZ0P0002U00",
+                              "xivisit0keyval":"N8WYZA0002U00",
+                              "xiaction0u_version":"!",
+                              "xiaction0mdkeyval":"N8WYPT0002U00",
+                              "xiaction0mdsubsys":"SR",
+                              "xiaction0duedate":"2014-07-20T00:00:00+01:00",
+                              "xiaction0xiact":"VEH",
+                              "xiaction0actoff":"RS",
+                              "xiactpara":[  
+
+                              ],
+                              "status":0
+                            }
+                          ],
+                          "status":0
+                        }
+                      },
+                      {  
+                        "id":"",
+                        "organisation":"",
+                        "received":"",
+                        "status":0,
+                        "version":"",
+                        "visit":{  
+                          "modified":false,
+                          "xivisit0keyval":"ND0WA60001200",
+                          "xivisit0u_version":"!",
+                          "xivisit0mdsubsys":"SR",
+                          "srrec0keyval":"N8WYPT0002U00",
+                          "xirec0keyval":"N8WYQD0002U00",
+                          "xivisit0voff":"NW",
+                          "xivisit0idoxid":"ANYACT",
+                          "xivisit0xivtype":"ANYACT",
+                          "xivisit0datevisit":"2014-10-06T00:00:00+01:00",
+                          "xivisit_comments":[  
+
+                          ],
+                          "xipcwork":[  
+
+                          ],
+                          "xiaction":[  
+                            {  
+                              "modified":false,
+                              "xiaction0keyval":"ND0WAA0001200",
+                              "xivisit0keyval":"ND0WA60001200",
+                              "xiaction0u_version":"!",
+                              "xiaction0mdkeyval":"N8WYPT0002U00",
+                              "xiaction0mdsubsys":"SR",
+                              "xiaction0duedate":"2014-10-07T00:00:00+01:00",
+                              "xiaction0xiact":"CALLOG",
+                              "xiaction0actoff":"NW",
+                              "xiactpara":[  
+
+                              ],
+                              "status":0
+                            },
+                            {  
+                              "modified":false,
+                              "xiaction0keyval":"ND0WAA0001201",
+                              "xivisit0keyval":"ND0WA60001200",
+                              "xiaction0u_version":"!",
+                              "xiaction0mdkeyval":"N8WYPT0002U00",
+                              "xiaction0mdsubsys":"SR",
+                              "xiaction0duedate":"2014-10-08T00:00:00+01:00",
+                              "xiaction0xiact":"GENLET",
+                              "xiaction0actoff":"NW",
+                              "xiactpara":[  
+
+                              ],
+                              "status":0
+                            }
+                          ],
+                          "status":0
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "prnotepad0keyval":[  
+
+                ],
+                "cnapplprop0keyval":[  
+
+                ],
+                "notes":[  
+
+                ],
+                "history":[  
+
+                ],
+                "status":0
+              }
+            }
+          ]
+        },
+        {  
+          "name":"Taxi Fare Query",
+          "groupType":"TXFARE",
+          "records":[  
+            {  
+              "id":"",
+              "organisation":"",
+              "received":"",
+              "version":"",
+              "record":{  
+                "modified":false,
+                "srrec0keyval":"NG9EQ90002V00",
+                "srrec0refval":"14/00059/TXFARE",
+                "srrec0u_version":"#",
+                "srrec0prkeyval":"0000WB00DT000",
+                "srrec0name":"Mr Henry Chambers",
+                "srrec0address":"6 Shelone Terrace\rNeath\rWest Glamorgan\rSA11 2UE",
+                "srrec0mapeast":"274092",
+                "srrec0mapnorth":"194917",
+                "srrec0latitude":51.634197,
+                "srrec0longitude":-3.825301,
+                "srrec0recepd":"2014-12-08T10:34:00+00:00",
+                "srrec0targrespd":"2014-12-11T00:00:00+00:00",
+                "srrec0srrectype":"TXFARE",
+                "srrec0srstat":"1_NEW",
+                "srrec0xbsubsys":"LI",
+                "srrec0xbkeyval":"M9RSXH0002V00",
+                "srxtra":[  
+                  {  
+                    "modified":false,
+                    "srxtra0keyval":"NG9EQ90002V01",
+                    "srrec0keyval":"NG9EQ90002V00",
+                    "srxtra0u_version":"!",
+                    "srxtra0seqno":"1.0",
+                    "srxtra0flabel":"Record Textual Data",
+                    "srxtra0fname":"SRTEXT",
+                    "srxtra0ftype":"TEXT"
+                  },
+                  {  
+                    "modified":false,
+                    "srxtra0keyval":"NG9EQ90002V02",
+                    "srrec0keyval":"NG9EQ90002V00",
+                    "srxtra0u_version":"!",
+                    "srxtra0seqno":"2.0",
+                    "srxtra0flabel":"Add a Date",
+                    "srxtra0fname":"SRDATE",
+                    "srxtra0ftype":"DATE"
+                  },
+                  {  
+                    "modified":false,
+                    "srxtra0keyval":"NG9EQ90002V03",
+                    "srrec0keyval":"NG9EQ90002V00",
+                    "srxtra0u_version":"!",
+                    "srxtra0seqno":"3.0",
+                    "srxtra0flabel":"Text in Upper Case",
+                    "srxtra0fname":"SRUPPER",
+                    "srxtra0ftype":"UPPER"
+                  },
+                  {  
+                    "modified":false,
+                    "srxtra0keyval":"NG9EQ90002V04",
+                    "srrec0keyval":"NG9EQ90002V00",
+                    "srxtra0u_version":"!",
+                    "srxtra0seqno":"4.0",
+                    "srxtra0flabel":"Numbers",
+                    "srxtra0fname":"SRNUMBER",
+                    "srxtra0ftype":"NUMBER"
+                  },
+                  {  
+                    "modified":false,
+                    "srxtra0keyval":"NG9EQ90002V05",
+                    "srrec0keyval":"NG9EQ90002V00",
+                    "srxtra0u_version":"!",
+                    "srxtra0seqno":"5.0",
+                    "srxtra0flabel":"Pick from a List",
+                    "srxtra0fname":"SRLIST",
+                    "srxtra0ftype":"XTRA_LIST"
+                  }
+                ],
+                "pclocn":[  
+
+                ],
+                "srcustomer":[  
+
+                ],
+                "xirec":[  
+                  {  
+                    "modified":false,
+                    "xirec0keyval":"NG9EQ90002V06",
+                    "xirec0u_version":"\"",
+                    "xirec0mdkeyval":"NG9EQ90002V00",
+                    "xirec0mdsubsys":"SR",
+                    "xirec0refval":"14/00114/XCOMP",
+                    "xirec0prkeyval":"0000WB00DT000",
+                    "xirec0xirectype":"XCOMP",
+                    "xirec0xistat":"0_REC",
+                    "xirec0groupmod":"LI",
+                    "xrrec":[  
+
+                    ],
+                    "xivisit0xikeyval":[  
+
+                    ],
+                    "visits":[  
+
+                    ]
+                  }
+                ],
+                "prnotepad0keyval":[  
+
+                ],
+                "cnapplprop0keyval":[  
+
+                ],
+                "notes":[  
+
+                ],
+                "history":[  
+
+                ],
+                "status":0
+              }
+            }
+          ]
+        }
+      ],
+      "propertydetails":[  
+        {  
+          "details":[  
+            {  
+              "Key":"Type",
+              "Value":"Hackney Carriage - Vehicle"
+            },
+            {  
+              "Key":"License Plate",
+              "Value":"HV03"
+            },
+            {  
+              "Key":"Licensing Applicants",
+              "Value":"Mr Henry Chambers"
+            },
+            {  
+              "Key":"Licensing Registered Keepers",
+              "Value":"Mr Henry Chambers"
+            }
+          ],
+          "title":"LICASE - 13/00007/TXHKVE"
+        },
+        {  
+          "details":[  
+            {  
+              "Key":"Type",
+              "Value":"Premises Application"
+            },
+            {  
+              "Key":"Licensing Applicants",
+              "Value":"Mr Henry Chambers"
+            }
+          ],
+          "title":"LICASE - 16/00016/LAPRE"
+        }
+      ],
+      "documents":[  
+
+      ]
+    }
+  ]
+}

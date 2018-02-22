@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ServiceRequest.Views.FilterByRequest"
+             xmlns:appContext="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest" BackgroundColor="{x:Static appContext:Styles.WindowBackground}"
+             Orientation="Vertical"  VerticalOptions="Start"  Spacing="0">
+
+  <Grid x:Name="Gl_RequestType" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="80*"/>
+      <ColumnDefinition Width="20*"/>
+	 </Grid.ColumnDefinitions>
+		 <Grid.HeightRequest>
+						<OnPlatform x:TypeArguments="x:Double" iOS="45" Android="35" WinPhone="35"/>
+					</Grid.HeightRequest>
+
+    <Label x:Name="FilterName" TextColor="{x:Static appContext:Styles.DarkText}"  BackgroundColor="Transparent"
+             Grid.Row="0" Grid.Column="0" Text="{Binding Text}" LineBreakMode="TailTruncation" VerticalTextAlignment="Center" HorizontalTextAlignment="Start">
+			 <Label.VerticalOptions>
+					<OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+			  </Label.VerticalOptions>
+			 <Label.HorizontalOptions>
+				<OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="StartAndExpand" WinPhone="StartAndExpand"></OnPlatform>
+			  </Label.HorizontalOptions>
+		</Label>
+    <Label x:Name="FilterKey" TextColor="{x:Static appContext:Styles.DarkText}"  BackgroundColor="Transparent" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+         Grid.Row="0" Grid.Column="0" Text="{Binding Key}" IsVisible="False">
+			<Label.VerticalOptions>
+					<OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+			  </Label.VerticalOptions>
+			 <Label.HorizontalOptions>
+				<OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="StartAndExpand" WinPhone="StartAndExpand"></OnPlatform>
+			  </Label.HorizontalOptions>
+			</Label>
+    <Image x:Name="Imagess" Source = "Check.jpg" HeightRequest = "25" WidthRequest = "25" VerticalOptions = "CenterAndExpand" HorizontalOptions = "CenterAndExpand" IsVisible = "{Binding IsVisible}"  Grid.Row="0" Grid.Column="1" ></Image>
+  </Grid>
+</StackLayout>

@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:colors="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             xmlns:btn="clr-namespace:ServiceRequest.Custom;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Views.DocumentListView"
+             xmlns:views="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             BackgroundColor="{x:Static colors:Styles.WindowBackground}">
+
+  <Grid x:Name="Gl_Main" RowSpacing="1" HorizontalOptions="FillAndExpand"
+       VerticalOptions="FillAndExpand">
+
+    <Grid.RowDefinitions>
+      <!--Header-->
+      <RowDefinition Height="7.8*"/>
+      <!--Document List-->
+      <RowDefinition Height="87.2*"/>
+      <!--Footer-->
+      <RowDefinition Height="5*"/>
+    </Grid.RowDefinitions>
+
+    <!--Header Grid-->
+    <Grid Grid.Row="0" Grid.Column="0"   BackgroundColor="{x:Static colors:Styles.MainAccent}" >
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="2*"/>
+        <ColumnDefinition Width="4*"/>
+        <ColumnDefinition Width="40*"/>
+        <ColumnDefinition Width="48*"/>
+        <ColumnDefinition Width="4*"/>
+        <ColumnDefinition Width="2*"/>
+      </Grid.ColumnDefinitions>
+
+      <Image x:Name="Img_Back" Source="back.png" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"
+             Aspect="AspectFit"/>
+
+      <Label x:Name="Lbl_CaseName" FontSize="{x:Static colors:FontSizeView.CustomFontSizeMeMeMi}" HeightRequest="25"
+             VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"
+             TextColor="White" LineBreakMode="TailTruncation" BackgroundColor="Transparent"
+             Grid.Row="0" Grid.Column="2" />
+
+      <Label x:Name="Lbl_TitleName"  Text="Document" BackgroundColor="Transparent" FontSize="{x:Static colors:FontSizeView.CustomFontSizeMeMeMi}"  FontAttributes="Bold"
+             HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" Grid.Row="0"
+             Grid.Column="3"/>
+
+    </Grid>
+
+    <!--Document Grid-->
+
+
+    <!--<Grid
+          HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+          Margin="3,0"
+          Grid.Row="1">
+
+      <Grid.RowDefinitions>
+        <RowDefinition Height="100*"/>
+      </Grid.RowDefinitions>-->
+
+    <Grid x:Name="Gl_filter" Grid.Row="1" BackgroundColor="{x:Static colors:Styles.WindowBackground}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="3,0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="10*" />
+        <RowDefinition Height="0.2*" />
+        <RowDefinition Height="89.8*" />
+      </Grid.RowDefinitions>
+      <Grid Grid.Row="0" BackgroundColor="White">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="45*" />
+          <ColumnDefinition Width="25*" />
+          <ColumnDefinition Width="30*" />
+        </Grid.ColumnDefinitions>
+        
+         <Grid Grid.Column="0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="15*" />
+            <RowDefinition Height="70*" />
+            <RowDefinition Height="15*" />
+          </Grid.RowDefinitions>
+          <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition>
+                <ColumnDefinition.Width>
+                  <OnPlatform x:TypeArguments="GridLength" iOS="1*" Android="1*" WinPhone="1*" />
+                </ColumnDefinition.Width>
+              </ColumnDefinition>
+              <ColumnDefinition>
+                <ColumnDefinition.Width>
+                  <OnPlatform x:TypeArguments="GridLength" iOS="15*" Android="9*" WinPhone="9*" />
+                </ColumnDefinition.Width>
+              </ColumnDefinition>
+              <ColumnDefinition>
+                <ColumnDefinition.Width>
+                  <OnPlatform x:TypeArguments="GridLength" iOS="84*" Android="90*" WinPhone="90*" />
+                </ColumnDefinition.Width>
+              </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="Lbl_Filter" Text="Filter" TextColor="Gray" Grid.Column="1" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" />
+            <SearchBar x:Name="SrchBar" Placeholder="Description" FontSize="{x:Static views:FontSizeView.CustomFontSizeSmSmMi}" TextColor="Black" Grid.Column="2"/>
+          </Grid>
+        </Grid>
+
+        <btn:SrPicker x:Name="PkrRefVal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0"
+                    Grid.Row="0" Grid.Column="1" TextColor="{x:Static colors:Styles.MainAccent}" IsVisible="True"/>
+
+
+        <Grid Grid.Column="2">
+          <Grid.RowDefinitions>
+            <RowDefinition>
+              <RowDefinition.Height>
+                <OnPlatform x:TypeArguments="GridLength" iOS="20*" Android="15*" WinPhone="15*" />
+              </RowDefinition.Height>
+            </RowDefinition>
+            <RowDefinition>
+              <RowDefinition.Height>
+                <OnPlatform x:TypeArguments="GridLength" iOS="60*" Android="70*" WinPhone="70*" />
+              </RowDefinition.Height>
+            </RowDefinition>
+            <RowDefinition>
+              <RowDefinition.Height>
+                <OnPlatform x:TypeArguments="GridLength" iOS="20*" Android="15*" WinPhone="15*" />
+              </RowDefinition.Height>
+            </RowDefinition>
+          </Grid.RowDefinitions>
+          <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition>
+                <ColumnDefinition.Width>
+                  <OnPlatform x:TypeArguments="GridLength" iOS="20*" Android="20*" WinPhone="20*" />
+                </ColumnDefinition.Width>
+              </ColumnDefinition>
+              <ColumnDefinition>
+                <ColumnDefinition.Width>
+                  <OnPlatform x:TypeArguments="GridLength" iOS="25*" Android="39*" WinPhone="39*" />
+                </ColumnDefinition.Width>
+              </ColumnDefinition>
+              <ColumnDefinition>
+                <ColumnDefinition.Width>
+                  <OnPlatform x:TypeArguments="GridLength" iOS="54*" Android="40*" WinPhone="40*" />
+                </ColumnDefinition.Width>
+              </ColumnDefinition>
+              <ColumnDefinition>
+                <ColumnDefinition.Width>
+                  <OnPlatform x:TypeArguments="GridLength" iOS="1*" Android="1*" WinPhone="1*" />
+                </ColumnDefinition.Width>
+              </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="Lbl_Sort" Text="Sort by" TextColor="Gray" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" />
+            <btn:SRiButton x:Name="Btn_Sort" IsVisible="true" Text="Date/Index" BackgroundColor="{x:Static colors:Styles.MainAccent}" TextColor="White" Grid.Column="2"
+              FontSize="{x:Static views:FontSizeView.CustomFontSizeSmSmMi}" WidthRequest="40" HeightRequest="30" Clicked="OnSort" />
+          </Grid>
+        </Grid>
+       
+      </Grid>
+      <Label x:Name="lbl_nodata" HorizontalOptions="Center" VerticalOptions="Center" Text="No Documents Available" TextColor="Gray" IsVisible="false" Grid.Row="2" />
+
+      <StackLayout Grid.Row="2" x:Name="Sl_Documents">
+        <ListView x:Name="Lstvw_Documents" RowHeight="85" SeparatorVisibility="None" >
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <Grid BackgroundColor="{Binding BackgroundColor}" HeightRequest="85" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="99*"/>
+                    <RowDefinition Height="1*"/>
+                  </Grid.RowDefinitions>
+                  <Grid Grid.Row="0" >
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="8*"/>
+                      <ColumnDefinition Width="67*"/>
+                      <ColumnDefinition Width="15*"/>
+                      <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Row="0">
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="15*"/>
+                        <RowDefinition Height="70*"/>
+                        <RowDefinition Height="15*"/>
+                      </Grid.RowDefinitions>
+                      <Image Aspect="AspectFit" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"  Source="{Binding ImagePath}"/>
+                    </Grid>
+                    <Grid Grid.Column="1" Padding="0,5,0,0" RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="34*"/>
+                        <RowDefinition Height="34*"/>
+                        <RowDefinition Height="32*"/>
+                      </Grid.RowDefinitions>
+                      <Label Text="{Binding SriDocument.Name}" LineBreakMode="TailTruncation" TextColor="Black" Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                             FontSize="{x:Static views:FontSizeView.CustomFontSizeSmSmMi}" />
+                      <Label Text="{Binding SriDocument.Description}" LineBreakMode="TailTruncation" TextColor="#606060" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                            FontSize="{x:Static views:FontSizeView.CustomFontSizeSmSmMi}" Grid.Row="1"/>
+                      <Label Text="{Binding DocumentSize}" TextColor="#606060" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                             FontSize="{x:Static views:FontSizeView.CustomFontSizeSmSmMi}" Grid.Row="2"/>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="60*"/>
+                        <RowDefinition Height="20*"/>
+                      </Grid.RowDefinitions>
+                      <btn:SRiButton x:Name="Btn_Download" Text="Download" BackgroundColor="{x:Static colors:Styles.MainAccent}" IsVisible="{Binding IsBtnVisible}"
+                               BorderRadius="8" Clicked="OnDownload"
+                              TextColor="White" Grid.Row="1" FontSize="{x:Static views:FontSizeView.CustomFontSizeSmSmMi}"
+                              HorizontalOptions="Center" VerticalOptions="Center">
+                        <btn:SRiButton.WidthRequest>
+                          <OnPlatform x:TypeArguments="x:Double"
+                                iOS="100"
+                                Android="100"
+                                WinPhone="100" />
+                        </btn:SRiButton.WidthRequest>
+                      </btn:SRiButton>
+
+                      <Image x:Name="Img_Download" Source="{Binding ArrowImage}" HorizontalOptions="End"
+                             VerticalOptions="FillAndExpand" Grid.Row="1"/>
+                      <Image x:Name="imgStatus" Source="{Binding PendingImage}" HorizontalOptions="End" Margin="0,0,30,0"  VerticalOptions="EndAndExpand"
+                         Grid.Row="1" Grid.RowSpan="2" Aspect="AspectFit" HeightRequest="20" WidthRequest="20" />
+                      <ActivityIndicator x:Name="ActInd_Downloading" IsVisible="{Binding IsVisible_Downloading}"
+                                         IsRunning="{Binding IsVisible_Downloading}" Grid.Row="1" />
+                    </Grid>
+                  </Grid>
+                  <BoxView Color="Gray" Opacity="0.5" Grid.Row="1"/>
+                </Grid>
+              
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </StackLayout>
+
+    </Grid>
+
+  </Grid>
+
+</ContentView>

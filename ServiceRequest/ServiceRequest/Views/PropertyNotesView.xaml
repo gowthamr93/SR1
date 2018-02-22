@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:colors="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Views.PropertyNotesView"
+             BackgroundColor="{x:Static colors:Styles.WindowBackground}">
+
+  <Grid x:Name="Gl_Main" RowSpacing="1">
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="7.8*"/>
+      <RowDefinition Height="87.2*"/>
+      <RowDefinition Height="5*"/>
+    </Grid.RowDefinitions>
+
+    <!--Header Grid-->
+    <Grid Grid.Row="0" Grid.Column="0" BackgroundColor="{x:Static colors:Styles.MainAccent}" >
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="2*"/>
+        <ColumnDefinition Width="4*"/>
+        <ColumnDefinition Width="37*"/>
+        <ColumnDefinition Width="64*"/>
+      </Grid.ColumnDefinitions>
+
+      <Image x:Name="Img_Back" Source="back.png" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit"/>
+
+      <Label x:Name="Lbl_CaseName" Text="Property Summary" FontSize="{x:Static colors:FontSizeView.CustomFontSizeMeMeMi}" HeightRequest="25" VerticalOptions="CenterAndExpand"
+             HorizontalOptions="StartAndExpand" TextColor="White" LineBreakMode="TailTruncation" BackgroundColor="Transparent" VerticalTextAlignment="Center"
+             Grid.Row="0" Grid.Column="2" />
+
+      <Label x:Name="Lbl_TitleName"  Text="Property Notes" BackgroundColor="Transparent" FontSize="{x:Static colors:FontSizeView.CustomFontSizeMeMeMi}"  FontAttributes="Bold"
+             HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" Grid.Row="0" Grid.Column="3"/>
+
+    </Grid>
+
+    <!--Notes list Grid-->
+    <Grid x:Name="Gl_PropertyNotes" Grid.Row="1" Grid.Column="0" >
+
+      <Grid.RowDefinitions>
+        <RowDefinition Height="100*" />
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="100*" />
+      </Grid.ColumnDefinitions>
+
+      <ScrollView Grid.Row="0" Grid.Column="0" >
+
+        <StackLayout x:Name="Sl_PropertyNotes" Padding="20"  Spacing="20" VerticalOptions="Start">
+
+        </StackLayout>
+
+      </ScrollView>
+
+    </Grid>
+
+  </Grid>
+
+</ContentView>

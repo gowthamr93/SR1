@@ -1,0 +1,73 @@
+{  
+      "appmodule":"sr",
+      "entity":"srrec",
+      "entitydoclists":[  
+        {  
+          "module":"sr",
+          "organisation":"SALES_DEMO",
+          "entitykey":"OIAAPS0001200",
+          "docs":[  
+            {  
+              "id":"sitePlan",
+              "name":"Site Plan",
+              "description":"JonesComplaint090117",
+              "extension":".pdf",
+              "size":64512,
+              "hash":"",
+              "mimetype":"application/pdf",
+              "status":0
+            },  
+            {  
+              "id":"complaintLetter",
+              "name":"Complaint Letter",
+              "description":"NoiseChristineWilson010117",
+              "extension":".pdf",
+              "size":49152,
+              "hash":"",
+              "mimetype":"application/pdf",
+              "status":0
+            },  
+            {  
+              "id":"monitoringForms",
+              "name":"Monitoring Forms",
+              "description":"ApplicationJones290915",
+              "extension":".pdf",
+              "size":33792,
+              "hash":"",
+              "mimetype":"application/pdf",
+              "status":0
+            },  
+            {  
+              "id":"outgoingLetter",
+              "name":"Outgoing Letter",
+              "description":"Inspection150812",
+              "extension":".pdf",
+              "size":110592,
+              "hash":"",
+              "mimetype":"application/pdf",
+              "status":0
+            },  
+            {  
+              "id":"report",
+              "name":"Report",
+              "description":"TippingPJones080615",
+              "extension":".pdf",
+              "size":29696,
+              "hash":"",
+              "mimetype":"application/pdf",
+              "status":0
+            },  
+            {  
+              "id":"serviceRequestForm",
+              "name":"Service Request Form",
+              "description":"SitePlan140513",
+              "extension":".pdf",
+              "size":105472,
+              "hash":"",
+              "mimetype":"application/pdf",
+              "status":0
+            }
+          ]
+        }
+      ]
+    }

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ServiceRequest.Views.InspectionCountView"
+             xmlns:appContext="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+  <Grid ColumnSpacing="5" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="5">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="75*" />
+      <ColumnDefinition Width="25*" />
+    </Grid.ColumnDefinitions>
+
+    <Label x:Name="Lbl_Inspections"
+           Grid.Column="0"
+           Text="Requests" TextColor="White"
+           FontAttributes="Bold"
+           FontSize="{x:Static appContext:FontSizeView.CustomFontSizeMeMeSm}"
+          HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand"
+           HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+    <Grid Grid.Column="1" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+      <Label x:Name="Lbl_Count"
+             FontAttributes="Bold"
+             TextColor="{x:Static appContext:Styles.MainAccent}"
+             HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+    </Grid>
+  </Grid>
+
+</Grid>

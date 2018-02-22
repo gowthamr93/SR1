@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:ServiceRequest.Custom;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Views.WindowsMapView"
+               xmlns:btn="clr-namespace:ServiceRequest.Custom;assembly=ServiceRequest">
+  <ContentView.Content>
+    <Grid x:Name="Gl_Main">
+      <custom:CustomMap x:Name="_CustomMap" />
+      <Grid Grid.Column="0" Grid.Row="0" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="50" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="1*"/>
+          <ColumnDefinition Width="49*"/>
+        </Grid.ColumnDefinitions>
+        <StackLayout Spacing="0" Grid.Column="1" Grid.Row="0" Orientation="Horizontal"
+                     HorizontalOptions="StartAndExpand" >
+          <btn:SRiButton x:Name="BtnMap" Text="Map" BorderColor="Gray" BorderWidth="1" BackgroundColor="Silver"
+                  TextColor="Black" VerticalOptions="Center" FontSize="16" WidthRequest="70" HeightRequest="35"/>
+
+          <btn:SRiButton x:Name="BtnSatellite" Text="Satellite" BorderColor="Gray" BorderWidth="1"
+                  BackgroundColor="Silver" TextColor="Black" VerticalOptions="Center" FontSize="16" WidthRequest="100" HeightRequest="35"/>
+
+        </StackLayout>
+      </Grid>
+
+    </Grid>
+  </ContentView.Content>
+</ContentView>

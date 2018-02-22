@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Label xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:colors="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Views.HyperLinkLabel" LineBreakMode="TailTruncation"
+             x:Name="Lbl_Input" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" TextColor="{x:Static colors:Styles.MainAccent}" >
+  </Label>

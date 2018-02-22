@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:colors="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Views.ViewCells.VisitActionDetailsViewCell"
+             Margin="30,-5,30,0" BackgroundColor="White">
+
+  <!--Legislation-->
+  <Grid>
+    <Grid.RowDefinitions  >
+      <RowDefinition Height="100*" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions >
+      <ColumnDefinition Width="25*"/>
+      <ColumnDefinition Width="55*"/>
+      <ColumnDefinition Width="20*"/>
+    </Grid.ColumnDefinitions>
+
+    <Label Text="Legislation" Margin="10, 0, 0, 0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"  TextColor="Gray" Grid.Row="0" Grid.Column="0" />
+		<BoxView x:Name="BX_Legislation" HorizontalOptions="Start" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0"   BackgroundColor="Transparent" Margin="0,0,0,35" />
+    <Label x:Name="Lbl_legislation"
+           Margin="10, 0, 0, 0" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"  TextColor="{x:Static colors:Styles.MainAccent}"
+           Grid.Row="0" Grid.Column="1"/>
+
+  </Grid>
+
+</StackLayout>

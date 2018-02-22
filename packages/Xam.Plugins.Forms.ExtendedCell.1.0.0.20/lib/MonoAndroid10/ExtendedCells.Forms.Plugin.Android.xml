@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExtendedCells.Forms.Plugin.Android</name>
+    </assembly>
+    <members>
+        <member name="T:ExtendedCells.Forms.Plugin.Android.ExtendedTextCellRenderer">
+            <summary>
+              Extended Text Cell renderer for Android
+            </summary>
+        </member>
+        <member name="M:ExtendedCells.Forms.Plugin.Android.ExtendedTextCellRenderer.Init">
+            <summary>
+              Call this method to make sure the assembly gets loaded
+            </summary>
+        </member>
+        <member name="M:ExtendedCells.Forms.Plugin.Android.ExtendedTextCellRenderer.GetCellCore(Xamarin.Forms.Cell,Android.Views.View,Android.Views.ViewGroup,Android.Content.Context)">
+            <summary>
+              This method returns the View (Controls Layout) for the current Cell
+            </summary>
+            <param name="item"></param>
+            <param name="convertView"></param>
+            <param name="parent"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

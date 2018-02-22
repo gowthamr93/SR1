@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ServiceRequest.Views.VisitsView"
+             xmlns:appContext="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest">
+  <Label x:Name="Lbl_Title" Text="VISITS" TextColor="#A0A0A0" FontSize="14" Margin="6" Grid.Row="0" HorizontalTextAlignment="Start"></Label>
+  <StackLayout BackgroundColor="White" VerticalOptions="Start" Margin="0,0,18,0">
+    <ListView  x:Name="Lstvw_Main" ItemsSource="{Binding Details}" BackgroundColor="White"  RowHeight="100"  ItemTapped="UnSelectList">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="99*"/>
+                <RowDefinition Height="1*"/>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="95*"></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+              </Grid.ColumnDefinitions>
+
+              <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Column="0" Grid.Row="0">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="25*"/>
+                  <RowDefinition Height="25*"/>
+                  <RowDefinition Height="25*"/>
+                  <!--<RowDefinition Height="23*"/>-->
+                  <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Label Text="{Binding VisitTypeDescription }" Margin="20,0,0,0" VerticalOptions="EndAndExpand" TextColor="#515151"  Grid.Row="0" Grid.Column="0" LineBreakMode="TailTruncation" FontAttributes="Bold"/>
+                <Label Text="{Binding ScheduleDate}" Margin="20,0,0,0" Grid.Row="1"  VerticalOptions="EndAndExpand" HorizontalOptions="Start" TextColor="#515151"  FontSize="{x:Static appContext:FontSizeView.CustomFontSizeSmSmMi}" />
+                <Label Text="{Binding CompletedDate}" Margin="20,0,0,0" Grid.Row="2"  VerticalOptions="EndAndExpand" HorizontalOptions="Start" TextColor="#515151"  FontSize="{x:Static appContext:FontSizeView.CustomFontSizeSmSmMi}"/>
+                <!--<BoxView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0" Grid.Column="0"  Grid.Row="3" BackgroundColor="#EFEFEF" />-->
+              </Grid>
+              <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0" Grid.ColumnSpan="2"  Grid.Row="1" BackgroundColor="#EFEFEF" />
+              <Image Source="chevron.png" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Aspect="AspectFill" Grid.Row="0" Grid.Column="1" HeightRequest="17" WidthRequest="17"></Image>
+
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+        </ListView> 
+      <OnPlatform x:TypeArguments="View">
+        <OnPlatform.Android>
+          <BoxView x:Name="Bx_Line" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0" BackgroundColor="#EFEFEF" />
+        </OnPlatform.Android>
+      	<OnPlatform.WinPhone>
+          <BoxView HeightRequest="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0" BackgroundColor="Transparent" />
+			</OnPlatform.WinPhone>
+			<OnPlatform.iOS>
+        <BoxView HeightRequest="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0" BackgroundColor="Transparent" />
+			</OnPlatform.iOS>
+      </OnPlatform>
+      <Label x:Name="Lbl_AddVisis" Text=" + Add Visits" Margin="20,0,0,10" VerticalOptions="Start" TextColor="{x:Static appContext:Styles.MainAccent}"/>    
+    </StackLayout>
+  </StackLayout>

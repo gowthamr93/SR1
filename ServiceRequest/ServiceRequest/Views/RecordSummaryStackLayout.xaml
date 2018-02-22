@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Views.RecordSummaryStackLayout"
+             xmlns:viewcell="clr-namespace:ServiceRequest.Views.ViewCells;assembly=ServiceRequest">
+
+  <Label x:Name="Lbl_Title" Text="{Binding Title}" TextColor="#A0A0A0" FontSize="{x:Static views:FontSizeView.CustomFontSizeSmSmMi}" Margin="6" Grid.Row="0" HorizontalTextAlignment="Start"></Label>
+
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <!--<ColumnDefinition Width="2*"/>-->
+      <ColumnDefinition Width="99*"/>
+      <ColumnDefinition Width="1*"/>
+    </Grid.ColumnDefinitions>
+    <StackLayout x:Name="Sl_Main" Grid.Column="0" BackgroundColor="White">
+      <ListView  x:Name="Lstvw_Main" ItemTapped="UnSelectList" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <viewcell:RecordSummaryStackLayoutViewCell/>
+            <!--<ViewCell>
+            <OnPlatform x:TypeArguments="View">
+              <OnPlatform.Android>
+                <Grid>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*"  />
+                    <ColumnDefinition Width="70*" />
+                  </Grid.ColumnDefinitions>
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="1"/>
+                  </Grid.RowDefinitions>
+                  <Label Text="{Binding Key}" Margin="20,4,0,4" VerticalOptions="CenterAndExpand" TextColor="#515151" Grid.Column="0"/>
+                  <Label x:Name="Lbl_Address" Text="{Binding Value}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black"  Grid.Column="1" LineBreakMode="WordWrap"/>
+                  <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" BackgroundColor="#EFEFEF" />
+                </Grid>
+              </OnPlatform.Android>
+
+              <OnPlatform.WinPhone>
+                <Grid>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"  />
+                    <ColumnDefinition Width="70*" />
+                    <ColumnDefinition Width="5*" />
+                  </Grid.ColumnDefinitions>
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="1"/>
+                  </Grid.RowDefinitions>
+                  <Label Text="{Binding Key}" Margin="20,4,0,4" VerticalOptions="CenterAndExpand" TextColor="#515151" Grid.Column="0"/>
+                  <Label Text="{Binding Value}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black"  Grid.Column="1" LineBreakMode="WordWrap"/>
+                  
+                  <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" BackgroundColor="#EFEFEF" />
+                </Grid>
+              </OnPlatform.WinPhone>
+
+              <OnPlatform.iOS>
+                <Grid>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*"  />
+                    <ColumnDefinition Width="70*" />
+                  </Grid.ColumnDefinitions>
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="1"/>
+                  </Grid.RowDefinitions>
+                  <Label Text="{Binding Key}" Margin="20,4,0,4" VerticalOptions="CenterAndExpand" TextColor="#515151" Grid.Column="0"/>
+                  <Label Text="{Binding Value}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black"  Grid.Column="1" LineBreakMode="WordWrap" Margin="0,4,0,0"/>
+                  <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" BackgroundColor="#EFEFEF" />
+                </Grid>
+              </OnPlatform.iOS>
+            </OnPlatform>
+
+          </ViewCell>-->
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+      <Grid x:Name="Gl_Footer">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="25*"  />
+          <ColumnDefinition Width="70*" />
+          <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <Label Text="Edit Record" Margin="20,4,0,4" VerticalOptions="CenterAndExpand" TextColor="{x:Static views:Styles.MainAccent}" Grid.Column="0"/>
+        <Label x:Name="Lbl_Address1" Text="{Binding Value}" TextColor="{Binding Color}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Grid.Column="1" LineBreakMode="WordWrap"/>
+
+        <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" BackgroundColor="#EFEFEF" />
+      </Grid>
+    </StackLayout>
+  </Grid>
+  <!--</Grid>-->
+
+
+</StackLayout>

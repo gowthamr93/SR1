@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:appContext="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Views.CaseCellList">
+  <Grid x:Name="Main_Grid" RowSpacing="0" ColumnSpacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Gray" >
+    <StackLayout x:Name="Main_Layout" VerticalOptions="StartAndExpand" Spacing="2"  BackgroundColor="{x:Static appContext:Styles.WindowBackground}" >
+      <Grid x:Name="G1_CaseCell"  RowSpacing="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+           HeightRequest="50" Margin="0,5,0,0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="25" />
+          <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="5*" />
+          <ColumnDefinition Width="85*" />
+          <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+        <!--Alpabet Grid-->
+        <Grid Grid.Row="0" Grid.Column="1" Margin="0,1.5,0,0" >
+          <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15*" />
+            <ColumnDefinition Width="85*" />
+          </Grid.ColumnDefinitions>-->
+
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition>
+              <ColumnDefinition.Width>
+                <OnPlatform x:TypeArguments="GridLength" iOS="10*" Android="15*" WinPhone="10*" />
+              </ColumnDefinition.Width>
+            </ColumnDefinition>
+            <ColumnDefinition>
+              <ColumnDefinition.Width>
+                <OnPlatform x:TypeArguments="GridLength" iOS="90*" Android="85*" WinPhone="90*" />
+              </ColumnDefinition.Width>
+            </ColumnDefinition>
+          </Grid.ColumnDefinitions>
+
+          <Label x:Name="Lbl_Point" Text="{Binding Alphabet}" Grid.Row="0" Grid.Column="0"
+                    Margin="0,-2,0,-4"
+                    TextColor="White"
+                    FontSize="{x:Static appContext:FontSizeView.CustomFontSizeMeMeSm}" LineBreakMode="TailTruncation"
+                    BackgroundColor="{x:Static appContext:Styles.StatusRed}"
+                    VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                    VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+
+          <Label x:Name="Lbl_Address" Text="{Binding TradeName}" Grid.Row="0" Grid.Column="1"
+                   TextColor="Black" FontAttributes="Bold" FontSize="{x:Static appContext:FontSizeView.CustomFontSizeMeMeSm}"
+                   VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"
+                   LineBreakMode="TailTruncation"/>
+        </Grid>
+
+        <!--Adress-->
+        <Label x:Name="Lbl_ApplictionNo" Text="{Binding Address}" Grid.Row="1"  Grid.Column="1"
+               TextColor="{x:Static appContext:Styles.DarkText}" FontSize="{x:Static appContext:FontSizeView.CustomFontSizeSmSmMi}" LineBreakMode="TailTruncation"
+               VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+               VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" />
+        <Grid x:Name="G_Image" Grid.Row="1" Grid.Column="2">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="100*" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*" />
+          </Grid.ColumnDefinitions>
+          <Image x:Name="Img_PendingUpload"
+                    Source="pending_upload.png"
+                    IsVisible="False" HeightRequest="17" WidthRequest="17"
+                    HorizontalOptions="Start" VerticalOptions="Center"
+                    Aspect="AspectFit"
+                    Grid.Row="0" Grid.Column="0"/>
+          <Image x:Name="Img_DoneUpload"
+                 Source="uploaded.png"
+                 IsVisible="False" HeightRequest="17" WidthRequest="17"
+                 HorizontalOptions="Start" VerticalOptions="Center"
+                 Aspect="AspectFit"
+                 Grid.Row="0" Grid.Column="0"/>
+          <Image x:Name="Img_NewCase"
+                Source="new_upload.png"
+                IsVisible="False" HeightRequest="17" WidthRequest="17"
+                HorizontalOptions="Start" VerticalOptions="Center"
+                Aspect="AspectFit"
+                Grid.Row="0" Grid.Column="0"/>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="2" Margin="0,5,0,0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="100*" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*" />
+          </Grid.ColumnDefinitions>
+          <Image x:Name="Img_Collapse"
+                    Source="chevron.png"
+                    IsVisible="True" HeightRequest="17" WidthRequest="17"
+                    HorizontalOptions="Start" VerticalOptions="Center"
+                    Aspect="AspectFit"
+                    Grid.Row="0" Grid.Column="0"/>
+          <Image x:Name="Img_Expand"
+                 Source="chevron_down.png"
+                 IsVisible="False" HeightRequest="17" WidthRequest="17"
+                 HorizontalOptions="Start" VerticalOptions="Center"
+                 Aspect="AspectFit"
+                 Grid.Row="0" Grid.Column="0"/>
+        </Grid>
+      </Grid>
+      <ListView x:Name ="Lstvw_RequestGroup" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                BackgroundColor="Transparent" HasUnevenRows="True" RowHeight="70" SeparatorVisibility="None">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <Grid VerticalOptions="FillAndExpand" RowSpacing="0" HorizontalOptions="FillAndExpand" Margin="0,9,0,0">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="33*"/>
+                  <RowDefinition Height="33*"/>
+                  <RowDefinition Height="33*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="5*" />
+                  <ColumnDefinition Width="85*" />
+                  <ColumnDefinition Width="10*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1" Grid.Row="0" >
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="95*" />
+                    <ColumnDefinition Width="5*" />
+                  </Grid.ColumnDefinitions>
+                  <Label x:Name="Lbl_GroupName" Margin="0,-5,0,0" Text="{Binding GroupName}" TextColor="{x:Static appContext:Styles.MediumText}"  LineBreakMode="TailTruncation" Grid.Column="0" Grid.Row="0"
+                         VerticalTextAlignment="Center" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontSize="{x:Static appContext:FontSizeView.CustomFontSizeSmSmMi}">
+                  </Label>
+                </Grid>
+                <Label x:Name="Lbl_RecordCount" Text="{Binding RecordCount}" TextColor="Black" FontSize="{x:Static appContext:FontSizeView.CustomFontSizeSmSmMi}" LineBreakMode="TailTruncation" Grid.Column="2" Grid.Row="0"
+                      VerticalTextAlignment="Center" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
+               
+                
+                <Grid Grid.Column="1" Grid.Row="1" >
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="70*"/>
+                  </Grid.ColumnDefinitions>
+                <Label Text="Scheduled" FontSize="{x:Static appContext:FontSizeView.CustomFontSizeSmSmMi}" Margin="0,-5,0,0" TextColor="{x:Static appContext:Styles.MediumText}" Grid.Column="0" LineBreakMode="TailTruncation" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></Label>
+
+                <Label x:Name="Lbl_Scheduled" Text="{Binding ScheduledDate}" TextColor="{x:Static appContext:Styles.MediumText}" Grid.Column="1" 
+                       Margin="0,-5,0,0" VerticalOptions="CenterAndExpand" FontSize="{x:Static appContext:FontSizeView.CustomFontSizeSmSmMi}" HorizontalOptions="StartAndExpand" LineBreakMode="TailTruncation" >
+                </Label>
+                  </Grid>
+                <Grid Grid.Column="1" Grid.Row="2" >
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="70*"/>
+                  </Grid.ColumnDefinitions>
+                <Label Text="Target" TextColor="{x:Static appContext:Styles.MediumText}" Margin="0,-5,0,0" Grid.Column="0"  FontSize="{x:Static appContext:FontSizeView.CustomFontSizeSmSmMi}" LineBreakMode="TailTruncation"  VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></Label>
+                
+                <Label x:Name="Lbl_TargetResponse" Text="{Binding TargetResponse}" TextColor="{x:Static appContext:Styles.MediumText}" Grid.Column="1" 
+                       Margin="0,-5,0,0" VerticalOptions="CenterAndExpand" FontSize="{x:Static appContext:FontSizeView.CustomFontSizeSmSmMi}" HorizontalOptions="StartAndExpand" LineBreakMode="TailTruncation" >
+                </Label>
+                </Grid>
+                
+              </Grid>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+
+    </StackLayout>
+  </Grid>
+</ContentView>

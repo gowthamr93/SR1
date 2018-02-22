@@ -1,0 +1,7 @@
+C:\CP 18_July_17\ServiceRequest\ServiceRequest\ServiceRequest\OnSite\bin\Debug\Idox.LGDP.Apps.Common.OnSite.dll
+C:\CP 18_July_17\ServiceRequest\ServiceRequest\ServiceRequest\OnSite\bin\Debug\Idox.LGDP.Apps.Common.OnSite.pdb
+C:\CP 18_July_17\ServiceRequest\ServiceRequest\ServiceRequest\OnSite\bin\Debug\Newtonsoft.Json.dll
+C:\CP 18_July_17\ServiceRequest\ServiceRequest\ServiceRequest\OnSite\bin\Debug\Newtonsoft.Json.xml
+C:\CP 18_July_17\ServiceRequest\ServiceRequest\ServiceRequest\OnSite\obj\Debug\Idox.LGDP.Apps.Common.OnSite.dll
+C:\CP 18_July_17\ServiceRequest\ServiceRequest\ServiceRequest\OnSite\obj\Debug\Idox.LGDP.Apps.Common.OnSite.pdb
+C:\CP 18_July_17\ServiceRequest\ServiceRequest\ServiceRequest\OnSite\obj\Debug\OnSite.csprojResolveAssemblyReference.cache

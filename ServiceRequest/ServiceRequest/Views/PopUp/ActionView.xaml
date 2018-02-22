@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:appContext="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Views.PopUp.ActionView"
+             BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+             RowSpacing="0">
+
+  <Grid.RowDefinitions>
+    <RowDefinition Height="49.5*" />
+    <RowDefinition Height="1*" />
+    <RowDefinition Height="49.5*" />
+  </Grid.RowDefinitions>
+  <!--Sync-->
+  <Grid x:Name="Gl_Sync" Grid.Row="0"
+         HorizontalOptions="FillAndExpand"
+        BackgroundColor="White">
+    <Grid.VerticalOptions>
+    <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+    </Grid.VerticalOptions>
+    <Label Text="Sync" TextColor="{x:Static appContext:Styles.MainAccent}"
+           FontSize="{x:Static appContext:FontSizeView.CustomFontSizeMeSmMi}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+			VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+		
+  </Grid>
+  <!--Seperator Line-->
+  <BoxView Grid.Row="1"
+           BackgroundColor="Gray"
+           HeightRequest="0.5"/>
+  <!--Search-->
+  <Grid x:Name="Gl_Search" Grid.Row="2"
+        HorizontalOptions="FillAndExpand"
+        BackgroundColor="White">
+    <Grid.VerticalOptions>
+      <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+    </Grid.VerticalOptions>
+    <Label Text="Search" TextColor="{x:Static appContext:Styles.MainAccent}"
+           FontSize="{x:Static appContext:FontSizeView.CustomFontSizeMeSmMi}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+			VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+  </Grid>
+
+</Grid>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:appContext="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+      x:Class="ServiceRequest.Views.PopUp.AddVisitPopupView"
+      BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+      RowSpacing="0">
+
+  <Grid.RowDefinitions>
+    <RowDefinition Height="49.5*" />
+    <RowDefinition Height="1*" />
+    <RowDefinition Height="49.5*" />
+  </Grid.RowDefinitions>
+  <!--Add New Image-->
+  <Grid x:Name="Gl_Add" Grid.Row="0"
+        BackgroundColor="White" >
+    <Grid.VerticalOptions>
+      <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+    </Grid.VerticalOptions>
+    <Grid.HorizontalOptions>
+      <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="FillAndExpand" WinPhone="FillAndExpand"></OnPlatform>
+    </Grid.HorizontalOptions>
+    <Label Text="Add New Image" TextColor="{x:Static appContext:Styles.MainAccent}"
+           FontSize="{x:Static appContext:FontSizeView.CustomFontSizeSmSmMi}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+           <Label.VerticalOptions>
+					<OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+			  </Label.VerticalOptions>
+			 <Label.HorizontalOptions>
+				<OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+			  </Label.HorizontalOptions>
+		</Label>
+  </Grid>
+  <!--Seperator Line-->
+  <BoxView Grid.Row="1"
+           BackgroundColor="Gray"
+           HeightRequest="0.5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+  <!--Add Audio-->
+  <Grid x:Name="Gl_AddAudio" Grid.Row="2"
+        BackgroundColor="White" >
+    <Grid.VerticalOptions>
+      <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+    </Grid.VerticalOptions>
+    <Grid.HorizontalOptions>
+      <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="FillAndExpand" WinPhone="FillAndExpand"></OnPlatform>
+    </Grid.HorizontalOptions>
+    <Label Text="Add Audio" TextColor="{x:Static appContext:Styles.MainAccent}"
+           FontSize="{x:Static appContext:FontSizeView.CustomFontSizeSmSmMi}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+            <Label.VerticalOptions>
+					<OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+			  </Label.VerticalOptions>
+			 <Label.HorizontalOptions>
+				<OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+			  </Label.HorizontalOptions>
+		</Label>
+  </Grid>
+</Grid>

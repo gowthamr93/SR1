@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<vwcel:SrViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ServiceRequest.Views.ViewCells.ParagraphInputViewCell"
+		     xmlns:vwcel="clr-namespace:ServiceRequest.Custom;assembly=ServiceRequest">
+
+  <!--Paragraph Input viewcell-->
+  <Grid Margin="10,0,10,0" BackgroundColor="White" RowSpacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="99*"/>
+      <RowDefinition Height="1*"/>
+    </Grid.RowDefinitions>
+    
+    <Grid x:Name="Gl_Main" Grid.Row="0" BackgroundColor="White" RowSpacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="3*"/>
+        <ColumnDefinition Width="5*"/>
+        <ColumnDefinition Width="87*"/>
+        <ColumnDefinition Width="5*"/>
+      </Grid.ColumnDefinitions>
+
+      <!--Swap image-->
+      <Image x:Name="Img_Swap" Source="icondrag.png" Aspect="AspectFit"
+					IsVisible="{Binding IsCellEditable}"
+             HeightRequest="20" WidthRequest="20" HorizontalOptions="CenterAndExpand"
+             VerticalOptions="CenterAndExpand" Grid.Column="0"/>
+
+      <!--Paragraph type-->
+      <Label Text="{Binding ParagraphType}" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+             VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1" />
+
+      <!--Delete image-->
+      <Image x:Name="Img_Delete" Source="bin.png" Aspect="AspectFit"
+             HeightRequest="40" WidthRequest="40" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsEditable}"
+             VerticalOptions="CenterAndExpand" Grid.Column="3"/>
+
+      <!--<BoxView Margin="10,0,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" HeightRequest="0.5"
+             BackgroundColor="Gray" Grid.Row="1" Grid.Column="0"/>
+
+    <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" HeightRequest="0.5"
+             BackgroundColor="Gray" Grid.Row="1" Grid.Column="1"/>-->
+      
+    </Grid>
+    <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" HeightRequest="1" Grid.Row="1">
+      <BoxView.BackgroundColor>
+        <OnPlatform x:TypeArguments="Color" iOS="Gray" Android="Gray" WinPhone="Gray"/>
+      </BoxView.BackgroundColor>
+    </BoxView>
+  </Grid>
+</vwcel:SrViewCell>

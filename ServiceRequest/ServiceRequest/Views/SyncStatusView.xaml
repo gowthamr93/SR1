@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ServiceRequest.Views.SyncStatusView"
+             BackgroundColor="Transparent" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" RowSpacing="0">
+  <Grid.RowDefinitions>
+    <RowDefinition Height="40*" />
+    <RowDefinition Height="60*" />
+  </Grid.RowDefinitions>
+
+  <Label x:Name="Lbl_SyncStatus" Grid.Row="0"
+               Text="Last Sync" TextColor="Black"
+               FontSize="14" FontAttributes="Bold"
+               HorizontalOptions="Center" VerticalOptions="End"  Margin="0,1,0,0"
+               VerticalTextAlignment="End"/>
+
+  <ActivityIndicator x:Name="Acin_Syncing" Grid.Row="1" VerticalOptions="StartAndExpand" HeightRequest="15">
+    <ActivityIndicator.IsVisible>
+      <Binding Path="isLoading" />
+    </ActivityIndicator.IsVisible>
+    <ActivityIndicator.IsRunning>
+      <Binding Path="isLoading" />
+    </ActivityIndicator.IsRunning>
+  </ActivityIndicator>
+
+  <Label x:Name="Lbl_SyncDateTime" Grid.Row="1"
+         TextColor="Gray"
+         FontSize="12"
+         Margin="0,-3,0,0"
+         HorizontalOptions="Center" VerticalOptions="Start"
+         VerticalTextAlignment="Start">
+		<Label.Margin>
+			<OnPlatform x:TypeArguments="Thickness" iOS="0,1,0,0"/>
+		</Label.Margin>
+  </Label>
+
+</Grid>

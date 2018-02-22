@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:colors="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Pages.VisitActionDetailsPage"
+             xmlns:tbl="clr-namespace:ServiceRequest.Custom;assembly=ServiceRequest"
+             xmlns:viewcell="clr-namespace:ServiceRequest.Views.ViewCells;assembly=ServiceRequest"
+		     xmlns:pkr="clr-namespace:ServiceRequest.Custom;assembly=ServiceRequest">
+             
+
+  <Grid x:Name="Gl_Main" BackgroundColor="{x:Static colors:Styles.WindowBackground}">
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="7.8*" />
+      <RowDefinition Height="87.2*" />
+      <RowDefinition Height="5*" />
+    </Grid.RowDefinitions>
+
+    <Grid Grid.Column="0" Grid.Row="0"
+          BackgroundColor="{x:Static colors:Styles.MainAccent}">
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="6*"/>
+        <ColumnDefinition Width="86*"/>
+        <ColumnDefinition Width="4*"/>
+        <ColumnDefinition Width="2*"/>
+        <ColumnDefinition Width="1*"/>
+      </Grid.ColumnDefinitions>
+      <BoxView x:Name="Boxvw_Cancel" Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+      <Label x:Name="Lbl_Cancel" Text="Cancel"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" TextColor="White" Grid.Column="1" Grid.Row="0" FontSize="{x:Static colors:FontSizeView.CustomFontSizeMeMeMi}"/>
+      <Label x:Name="Lbl_Title"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="White" Grid.Row="0" Grid.Column="2" FontSize="{x:Static colors:FontSizeView.CustomFontSizeMeMeMi}" FontAttributes="Bold"/>
+      <BoxView x:Name="Boxvw_Save" Grid.Row="0" Grid.Column="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+      <Label x:Name="Lbl_Save" Text="Save"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" TextColor="White" Grid.Column="3" Grid.Row="0" FontSize="{x:Static colors:FontSizeView.CustomFontSizeMeMeMi}" FontAttributes="Bold"/>
+
+    </Grid>
+
+    <!--Details Grid-->
+    <ScrollView IsClippedToBounds="True" VerticalOptions="Fill" Orientation="Vertical" Grid.Row="1" Grid.Column="0" >
+      <!--<StackLayout >-->
+      <Grid  Padding="10" RowSpacing="5" >
+        <Grid.RowDefinitions>
+          <RowDefinition Height="235"/>
+          <RowDefinition Height="130"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackLayout x:Name="Sl_View" Grid.Row="0" Grid.Column="0">
+          <Grid RowSpacing="1.8">
+            <Grid.RowDefinitions >
+              <RowDefinition Height="20*" />
+              <RowDefinition Height="20*" />
+              <RowDefinition Height="20*" />
+              <RowDefinition Height="20*" />
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions >
+              <ColumnDefinition Width="100*"/>
+            </Grid.ColumnDefinitions>
+            <!--Details-->
+            <Label Text="DETAILS" FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmSmMi}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" TextColor="#A0A0A0" Grid.Row="0" Grid.Column="0" Margin="35,0,0,0"/>
+
+            <!--Scheduled-->
+            <Grid Margin="30,0,30,0" BackgroundColor="White" Grid.Row="1" Grid.Column="0" >
+              <Grid.RowDefinitions >
+                <RowDefinition Height="100*" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="27*"/>
+                <ColumnDefinition Width="28*"/>
+                <ColumnDefinition Width="20*"/>
+              </Grid.ColumnDefinitions>
+              <Label Text="Scheduled" Margin="10, 0, 0, 0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
+                     TextColor="Gray" Grid.Row="0" Grid.Column="0" />
+              <Label x:Name="Lbl_ScheduledDate" HorizontalOptions="StartAndExpand" Margin="6,0,0,0"
+                  Grid.Row="0" Grid.Column="1" VerticalOptions="CenterAndExpand" IsVisible="{Binding Old}"
+                  TextColor="Black"/>
+              <pkr:SrDatePicker x:Name="Dtp_ScheduledDate" Margin="5,0,0,0" HorizontalOptions="FillAndExpand" Grid.Row="0"
+                          Grid.Column="1" VerticalOptions="CenterAndExpand" TextColor="{x:Static colors:Styles.MainAccent}" BackgroundColor="White"
+                          IsVisible="False">
+                <pkr:SrDatePicker.Format>yyyy-MM-dd</pkr:SrDatePicker.Format>
+              </pkr:SrDatePicker>
+              <pkr:SrTimePicker x:Name="Tmp_ScheduledDate" TextColor="{x:Static colors:Styles.MainAccent}" Margin="5,0,0,0" VerticalOptions="Center"
+                          HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="2" IsVisible="False" />
+            </Grid>
+           
+            <!--Time Taken-->
+            <Grid BackgroundColor="White" Grid.Row="2" Grid.Column="0">
+              <Grid.Margin><OnPlatform x:TypeArguments="Thickness" iOS="30,0,30,-0.5" Android="30,0,30,-1" WinPhone="30,0,30,-1"/> </Grid.Margin> 
+              <Grid.RowDefinitions>
+                <RowDefinition Height="100*"/>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="27*"/>
+                <ColumnDefinition Width="28*"/>
+                <ColumnDefinition Width="20*"/>
+              </Grid.ColumnDefinitions>
+              <Label Text="Time Taken" Margin="10, 0, 0, 0" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+                     TextColor="Gray" Grid.Row="0"
+                     Grid.Column="0"/>
+              <pkr:SrPicker x:Name="Pkr_TimeTakenHours"
+                      HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1"  TextColor="{x:Static colors:Styles.MainAccent}" Margin="5,0,0,0"
+                      IsVisible="True" VerticalOptions="CenterAndExpand"/>
+              <pkr:SrPicker x:Name="Pkr_TimeTakenMinutes" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="5,0,0,0"
+                      Grid.Row="0" Grid.Column="2" TextColor="{x:Static colors:Styles.MainAccent}" IsVisible="True"/>
+            </Grid>
+            <!--Officer-->
+            <Grid Margin="30,0,30,0.5" BackgroundColor="White" Grid.Row="3" Grid.Column="0">
+              <Grid.RowDefinitions >
+                <RowDefinition Height="100*" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="55*"/>
+                <ColumnDefinition Width="20*"/>
+              </Grid.ColumnDefinitions>
+              <Label Text="Officer" Margin="10, 0, 0, 0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"  
+								TextColor="Gray" Grid.Row="0" Grid.Column="0" />
+				<BoxView x:Name="BX_Officer" HorizontalOptions="Start" VerticalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0"   BackgroundColor="Transparent"  />			
+              <Label x:Name="Lbl_Officer"
+                     Margin="10, 0, 0, 0" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"  TextColor="{x:Static colors:Styles.MainAccent}"
+                     Grid.Row="0" Grid.Column="1"/>
+            </Grid>
+
+          </Grid>
+        </StackLayout>
+
+        <!--Completion Row-->
+        <StackLayout Grid.Row="1">
+          <Grid RowSpacing="1.8" >
+            <Grid.HeightRequest>
+              <OnPlatform x:TypeArguments="x:Double" iOS="145" Android="145" WinPhone="145" />
+            </Grid.HeightRequest>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="25*" />
+              <RowDefinition Height="5*" />
+              <RowDefinition Height="38*" />
+              <RowDefinition Height="38*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="100*" />
+            </Grid.ColumnDefinitions>
+           
+            <Label Text="COMPLETION" Margin="35,0,0,0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" TextColor="#A0A0A0" Grid.Row="0" Grid.Column="0"
+								FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmSmMi}"/>
+              
+            <!--Status-->
+            <Grid  BackgroundColor="White" Grid.Row="2" Grid.Column="0" ColumnSpacing="0" Margin="30,0,30,0" >
+              <Grid.RowDefinitions>
+                <RowDefinition Height="100*" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100*" />
+              </Grid.ColumnDefinitions>
+              <Grid Grid.Row="0" Grid.Column="0" >
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="100*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="25*" />
+                  <ColumnDefinition Width="55*" />
+                  <ColumnDefinition Width="20*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Status" Margin="10, 0, 0, 0" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" TextColor="Gray" Grid.Row="0" Grid.Column="0">
+                </Label>
+                <Label x:Name="Lbl_Status" Margin="4, 0, 0, 0" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" TextColor="Black" Grid.Row="0" Grid.Column="1" IsVisible="False"/>
+                
+                <pkr:SrPicker x:Name="Pkr_Status" Margin="4,5,0,5" Grid.Row="0" Grid.Column="1" TextColor="#2B8ECF" IsVisible="false">
+                </pkr:SrPicker>
+              </Grid>
+            </Grid>
+
+            <!--Completed date-->
+            <Grid  BackgroundColor="White" Grid.Row="3" Grid.Column="0" ColumnSpacing="0" Margin="30,0,30,0" >
+              <Grid.RowDefinitions>
+                <RowDefinition Height="100*" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100*" />
+              </Grid.ColumnDefinitions>
+              <Grid BackgroundColor="White" Grid.Row="0" Grid.Column="0">
+              <Grid.RowDefinitions >
+                <RowDefinition Height="100*" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="27*"/>
+                <ColumnDefinition Width="28*"/>
+                <ColumnDefinition Width="20*"/>
+              </Grid.ColumnDefinitions>
+              <Label Text="Completed Date" Margin="10, 0, 0, 0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
+                    TextColor="Gray" Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
+              <pkr:SrDatePicker x:Name="Dtp_CompletedDate" Margin="5,0,0,0" HorizontalOptions="FillAndExpand" Grid.Row="0"
+                          Grid.Column="1" VerticalOptions="CenterAndExpand" TextColor="{x:Static colors:Styles.MainAccent}" BackgroundColor="White"
+                          IsVisible="False">
+                <pkr:SrDatePicker.Format>yyyy-MM-dd</pkr:SrDatePicker.Format>
+              </pkr:SrDatePicker>
+              <pkr:SrTimePicker x:Name="Tmp_CompletedDate" TextColor="{x:Static colors:Styles.MainAccent}" Margin="5,0,0,0" VerticalOptions="Center"
+                          HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="2" IsVisible="False" />
+            </Grid>
+            </Grid>
+          </Grid>
+        </StackLayout>
+        
+        
+        <!--Notes-->
+        <StackLayout x:Name="Sl_Notes" Grid.Row="2" Grid.Column="0" Orientation="Vertical" Spacing="0" VerticalOptions="Start" Margin="30,0,30,0">
+          <Label Text="NOTES"  VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" TextColor="#A0A0A0" Margin="5,10,0,10"
+                        FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmSmMi}"/>
+          <ListView x:Name="Lst_Comments" HorizontalOptions="FillAndExpand" RowHeight="70" HeightRequest="0" VerticalOptions="FillAndExpand" BackgroundColor="White" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                <viewcell:ActionCommentViewCell/>
+              </DataTemplate>
+            </ListView.ItemTemplate>
+          </ListView>
+          
+           <!--Add Comments button-->
+          <Grid  BackgroundColor="White" VerticalOptions="StartAndExpand" HeightRequest="50">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="50*"/>
+              <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="Lbl_Comment" Text="+ Add Comments"  VerticalOptions="FillAndExpand" VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" TextColor="{x:Static colors:Styles.MainAccent}"
+                   Grid.Column="0" Margin="20,0,0,0" FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmSmMi}"/>
+
+          </Grid>
+        </StackLayout>
+
+        <!--Standard Paragraph-->
+        <StackLayout x:Name="Sl_Main" Orientation="Vertical" Spacing="3" VerticalOptions="Start" Margin="30,0,30,0" Grid.Row="3" Grid.Column="0" >
+          <Label Text="STANDARD PARAGRAPHS"  VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" TextColor="#A0A0A0" Margin="5,10,0,10"
+                 FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmSmMi}"/>
+          <tbl:SrTableView  x:Name="Tblvw_StandardParagraph"  VerticalOptions="FillAndExpand" HeightRequest="0" HorizontalOptions="FillAndExpand"
+                            BackgroundColor="White" RowHeight="105" IsVisible="False">
+            <TableRoot >
+              <TableSection x:Name="TblSec_ParagraphList" >
+              </TableSection>
+            </TableRoot>
+          </tbl:SrTableView>
+
+          <!--Add Paragraphs button-->
+          <Grid  BackgroundColor="White" VerticalOptions="CenterAndExpand" HeightRequest="50">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="50*"/>
+              <ColumnDefinition Width="50*"/>
+              <!--<ColumnDefinition Width="20*"/>-->
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="Lbl_AddParagraph" Text="+ Add Paragraph"  VerticalOptions="FillAndExpand" VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" TextColor="{x:Static colors:Styles.MainAccent}"
+                   Grid.Column="0" Margin="20,0,0,0" FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmSmMi}"/>
+
+            <Label x:Name="Lbl_Edit" Text="Edit"  VerticalOptions="FillAndExpand" VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center" HorizontalOptions="EndAndExpand" TextColor="{x:Static colors:Styles.MainAccent}"
+                   Margin="0,0,20,0" Grid.Column="1" FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmSmMi}"/>
+          </Grid>
+        </StackLayout>
+      </Grid>
+    </ScrollView>
+  </Grid>
+</ContentPage>

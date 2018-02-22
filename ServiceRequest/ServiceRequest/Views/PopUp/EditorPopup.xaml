@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:colors="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Views.PopUp.EditorPopup"
+             xmlns:Edtr="clr-namespace:ServiceRequest.Custom;assembly=ServiceRequest">
+
+  <StackLayout Orientation="Vertical"  BackgroundColor="Transparent">
+		<StackLayout.Padding>
+<OnPlatform x:TypeArguments="Thickness" iOS="7"  Android="10" WinPhone="10">
+    </OnPlatform>
+		</StackLayout.Padding>
+    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="100">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0.5*"/>
+        <ColumnDefinition Width="14*"/>
+        <ColumnDefinition Width="75.5*"/>
+        <ColumnDefinition Width="10*"/>
+      </Grid.ColumnDefinitions>
+      <Label Text="Cancel" Grid.Column="1" TextColor="{x:Static colors:Styles.MainAccent}" 
+					FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmSmMi}"
+         HorizontalTextAlignment="Start" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Label.GestureRecognizers>
+          <TapGestureRecognizer Tapped="OnCancelTapped"/>
+        </Label.GestureRecognizers>
+      </Label>
+      <Label Text="Edit Custom Text" Grid.Column="2" TextColor="Black" FontAttributes="Bold" 
+				FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmSmMi}"
+         VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+			
+      <Label Text="Save" Grid.Column="3" TextColor="{x:Static colors:Styles.MainAccent}" 
+					FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmSmMi}" HorizontalTextAlignment="Center"
+             VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Label.GestureRecognizers>
+          <TapGestureRecognizer Tapped="OnSaveTapped"/>
+        </Label.GestureRecognizers>
+      </Label>
+    </Grid>
+    <Edtr:SrEditor  x:Name="Edt_CustomText"  TextColor ="Black" HeightRequest="300"
+               VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+               	<Edtr:SrEditor.Margin>
+				<OnPlatform x:TypeArguments="Thickness" iOS="0,0,0,14"/>
+			</Edtr:SrEditor.Margin>
+		</Edtr:SrEditor>
+  </StackLayout>
+</ContentView>

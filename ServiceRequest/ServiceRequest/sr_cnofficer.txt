@@ -1,0 +1,23 @@
+{
+  "module":"CN",
+  "appModule":"SR",
+  "entity":"CNOFFICER",
+  "cases":
+  [
+    {
+      "id":"123",
+      "organisation":"someorg",
+      "received":"0",
+      "version":"1419038000",
+      "data":
+      {
+        "modified":false,
+        "cnofficer0offcode":"JOSM",
+        "cnofficer0name":"John Smith",
+        "cnofficer0idoxid":"john.smith@somewhere.co.uk",
+        "cnofficer0jobtitle":"Layabout",
+        "cnofficer0historic":"F"
+      }
+    }
+  ]
+}

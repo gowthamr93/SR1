@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ServiceRequest.Views.VisitsActionView"
+             xmlns:colors="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+              xmlns:views="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             BackgroundColor="{x:Static colors:Styles.WindowBackground}">
+
+  <Grid x:Name="Gl_Main" RowSpacing="1"   BackgroundColor="{x:Static colors:Styles.WindowBackground}">
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="8.2*"/>
+      <RowDefinition Height="87*"/>
+      <RowDefinition Height="5*"/>
+    </Grid.RowDefinitions>
+
+    <!--Header Grid-->
+    <Grid Grid.Row="0" Grid.Column="0" BackgroundColor="{x:Static colors:Styles.MainAccent}" >
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="5*"/>
+        <ColumnDefinition Width="89*"/>
+        <ColumnDefinition Width="4*"/>
+        <ColumnDefinition Width="2*"/>
+        <ColumnDefinition Width="1*"/>
+      </Grid.ColumnDefinitions>
+      <!--Cancel-->
+      <Label x:Name="Lbl_VisitCancel" Text="Cancel" TextColor="White" Grid.Column="1" Grid.Row="0" FontSize="{x:Static views:FontSizeView.CustomFontSizeSmMi}"
+             HorizontalOptions="Start" VerticalOptions="Center"/>
+      <!--Title-->
+      <Label x:Name="Lbl_TitleName" BackgroundColor="Transparent" FontSize="{x:Static views:FontSizeView.CustomFontSizeMeSm}"
+             FontAttributes="Bold" HorizontalOptions="CenterAndExpand"
+             VerticalOptions="CenterAndExpand" TextColor="White" Grid.Row="0" Grid.Column="2"/>
+      <!--Save-->
+      <Label x:Name="Lbl_VisitSave" Text="Save" TextColor="White" Grid.Column="3" Grid.Row="0" FontSize="{x:Static views:FontSizeView.CustomFontSizeSmMi}"
+             HorizontalOptions="Start" VerticalOptions="Center"/>
+      <!--Add image-->
+      <Image x:Name="Img_Add" Source="add.png" Grid.Column="4" VerticalOptions="Center" Grid.Row="0"
+             HorizontalOptions="Center" Aspect="AspectFill"/>
+
+    </Grid>
+    <!--Action List Grid-->
+    <ScrollView Grid.Row="1" Grid.Column="0"  >
+      
+      <Grid x:Name="Gl_ActionDetails">
+        
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="2*"/>
+          <ColumnDefinition Width="96*"/>
+          <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackLayout x:Name="Sl_ActionDetails" Grid.Column="1" Padding="0" VerticalOptions="Start">
+          <!--Action title-->
+          <Label x:Name="Lbl_Title" Text="ACTIONS" TextColor="#A0A0A0" FontSize="14" Margin="6" Grid.Row="0"
+                 HorizontalTextAlignment="Start"/>
+          <!--Action List-->
+          <Grid x:Name="Gl_Action">
+            
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="100*"/>
+            </Grid.ColumnDefinitions>
+
+            <ListView  x:Name="Lstvw_Main" ItemsSource="{Binding Details}" BackgroundColor="White"  HasUnevenRows="True"
+                       Grid.Column="0" ItemTapped="AddActionsItemTapped">
+              
+              <ListView.ItemTemplate>
+                <DataTemplate>
+                  <ViewCell>
+                    <Grid  HeightRequest="60">
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="98*"/>
+                        <ColumnDefinition Width="2*"/>
+                      </Grid.ColumnDefinitions>
+                      <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Column="0">
+                        <Grid.RowDefinitions>
+                          <RowDefinition Height="40*"/>
+                          <RowDefinition Height="40*"/>
+                          <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <!--Action Type Description-->
+                        <Label Text="{Binding ActionTypeDescription }" Margin="20,0,0,0" VerticalOptions="EndAndExpand"
+                               TextColor="#515151"  Grid.Row="0" Grid.Column="0" LineBreakMode="TailTruncation"
+                               FontAttributes="Bold" FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmMi}"/>
+                        <!--Completed Date-->
+                        <Label Text="{Binding CompletedDate}" Margin="20,0,0,0" Grid.Row="1"  VerticalOptions="EndAndExpand"
+                               HorizontalOptions="Start" TextColor="#515151"  FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmMi}"/>
+                        <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0"
+                                 Grid.Column="0" Grid.Row="2" BackgroundColor="#EFEFEF" />
+                      </Grid>
+                      <Image Source="chevron.png" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Aspect="AspectFill"
+                             Grid.Row="0" Grid.Column="1" HeightRequest="17" WidthRequest="17"/>
+
+                    </Grid>
+                  </ViewCell>
+                </DataTemplate>
+              </ListView.ItemTemplate>
+              
+              <ListView.Footer>
+                <Label x:Name="Lbl_AddActions" Text="+ Add Actions" HeightRequest="30" Grid.Row="2" Grid.Column="0" Margin="20,20,0,0"
+                       VerticalOptions="Start" TextColor="{x:Static colors:Styles.MainAccent}"  FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmMi}"/>
+              </ListView.Footer>
+              
+            </ListView>
+          
+          </Grid>
+
+          <StackLayout x:Name="Sl_Details" Grid.Column="1" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+            <!--Detail Title-->
+            <Label x:Name="Lbl_Details" Text="DETAILS" TextColor="#A0A0A0" FontSize="14" Margin="6" Grid.Row="0"
+                   HorizontalTextAlignment="Start"/>
+            <!--Details-->
+            <Grid x:Name="Gl_Details" HeightRequest="350"  RowSpacing="1">
+              
+              <Grid.RowDefinitions >
+                <RowDefinition Height="15*" />
+                <RowDefinition Height="15*" />
+                <RowDefinition Height="15*" />
+                <RowDefinition Height="15*" />
+                <RowDefinition Height="40*" />
+              </Grid.RowDefinitions>
+              <!--Scheduled-->
+              <Grid BackgroundColor="White" Grid.Row="0" Grid.Column="0" ColumnSpacing="0" >
+                
+                <Grid.RowDefinitions >
+                  <RowDefinition Height="60*" />
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions >
+                  <ColumnDefinition Width="25*"/>
+                  <ColumnDefinition Width="27*"/>
+                  <ColumnDefinition Width="28*"/>
+                  <ColumnDefinition Width="20*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="Scheduled" Margin="10, 0, 0, 0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
+                       TextColor="Gray" Grid.Row="0" Grid.Column="0" />
+               
+                <Label x:Name="Lbl_ScheduledDate" HorizontalOptions="StartAndExpand" Margin="6,0,0,0"
+                       Grid.Row="0" Grid.Column="1" VerticalOptions="CenterAndExpand" IsVisible="{Binding Old}"
+                       TextColor="Black"/>
+              
+                <DatePicker x:Name="Dtp_ScheduledDate" Margin="4,0,0,0" HorizontalOptions="FillAndExpand" Grid.Row="0"
+                            Grid.Column="1" VerticalOptions="CenterAndExpand" TextColor="#2B8ECF" BackgroundColor="White"
+                            IsVisible="False">
+                  <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                </DatePicker>
+                
+                <TimePicker x:Name="Tmp_ScheduledDate" TextColor="#2B8ECF" Margin="5,0,0,0" VerticalOptions="Center"
+                            HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="2" IsVisible="False" />
+             
+              </Grid>
+              <!--Completed-->
+              <Grid BackgroundColor="White" Grid.Row="1" Grid.Column="0" ColumnSpacing="0">
+                
+                <Grid.RowDefinitions >
+                  <RowDefinition Height="60*" />
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions >
+                  <ColumnDefinition Width="25*"/>
+                  <ColumnDefinition Width="27*"/>
+                  <ColumnDefinition Width="28*"/>
+                  <ColumnDefinition Width="20*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="Completed" Margin="10, 0, 0, 0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
+                       TextColor="Gray" Grid.Row="0" Grid.Column="0" />
+
+                <DatePicker x:Name="Dtp_CompletedDate" Margin="4,0,0,0" HorizontalOptions="FillAndExpand" Grid.Row="0"
+                            Grid.Column="1" VerticalOptions="CenterAndExpand" TextColor="#2B8ECF" BackgroundColor="White">
+                  <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                </DatePicker>
+                
+                <TimePicker x:Name="Tmp_CompletedDate" TextColor="#2B8ECF" Margin="5,0,0,0" VerticalOptions="Center"
+                            HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="2" />
+                
+              </Grid>
+              <!--Hours Taken-->
+              <Grid BackgroundColor="White" Grid.Row="2" Grid.Column="0">
+                
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="99*"/>
+                  <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Grid Grid.Row="0" Grid.Column="0" Padding="0,5">
+                  
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="100*"/>
+                  </Grid.RowDefinitions>
+                  
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="27.5*"/>
+                    <ColumnDefinition Width="27.5*"/>
+                    <ColumnDefinition Width="20*"/>
+                  </Grid.ColumnDefinitions>
+                  
+                  <Label Text="Time Taken" Margin="10, 0, 0, 0" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+                         VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" TextColor="Gray" Grid.Row="0"
+                         Grid.Column="0"/>
+                  
+                  <Picker x:Name="Pkr_TimeTakenHours" HeightRequest="20" WidthRequest="20" Margin="3,0,0,0"
+                          HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1"  TextColor="#2B8ECF"/>
+                  
+                  <Picker x:Name="Pkr_TimeTakenMinutes" HeightRequest="20" WidthRequest="20" HorizontalOptions="FillAndExpand"
+                          Grid.Row="0" Grid.Column="2" TextColor="#2B8ECF" />
+                  
+                </Grid>
+                
+              </Grid>
+              <!--Miles Travelled-->
+              <Grid BackgroundColor="White" Grid.Row="3" Grid.Column="0">
+                
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="99*"/>
+                  <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="100*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Grid Grid.Row="0" Grid.Column="0" Padding="0,5">
+                  
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="100*"/>
+                  </Grid.RowDefinitions>
+                  
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="27.5*"/>
+                    <ColumnDefinition Width="27.5*"/>
+                    <ColumnDefinition Width="20*"/>
+                  </Grid.ColumnDefinitions>
+                  
+                  <Label Text="Miles travelled" Margin="10, 0, 0, 0" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" 
+                         VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" TextColor="Gray" Grid.Row="0" Grid.Column="0"/>
+                  
+                  <Picker x:Name="Pkr_Miles" HeightRequest="20" WidthRequest="20" Margin="4,0,0,0" HorizontalOptions="FillAndExpand" 
+                          Grid.Row="0" Grid.Column="1"  TextColor="#2B8ECF"  />
+                  
+                  <Picker x:Name="Pkr_DecimalMiles" HeightRequest="20" WidthRequest="20"  HorizontalOptions="FillAndExpand" Grid.Row="0"
+                          Grid.Column="2"  TextColor="#2B8ECF"  />
+
+                </Grid>
+                
+              </Grid>
+              <!--Notes-->
+              <Grid BackgroundColor="White" HeightRequest="100" Grid.Row="4" Grid.Column="0">
+                
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="99*"/>
+                  <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="100*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Grid Grid.Row="0" Grid.Column="0" Padding="0,5">
+                  
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="100*"/>
+                  </Grid.RowDefinitions>
+                  
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="75*"/>
+                  </Grid.ColumnDefinitions>
+                  
+                  <Label Text="Notes" Margin="10, 0, 0, 0"  VerticalTextAlignment="Start" HorizontalTextAlignment="Start"
+                         VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand"
+                         TextColor="Gray" Grid.RowSpan="3" Grid.Row="0" Grid.Column="0"/>
+
+                  <Editor x:Name="Ed_Notes" Margin="0, 10, 10, 0" FontSize="20" HorizontalOptions="FillAndExpand" 
+                          TextColor="#2B8ECF"  Grid.RowSpan="3" Grid.Row="0" Grid.Column="1"/>
+                  
+                </Grid>
+                
+              </Grid>
+              
+            </Grid>
+            
+          </StackLayout>
+
+        </StackLayout>
+        
+      </Grid>
+      
+    </ScrollView>
+    
+  </Grid>
+
+</ContentPage>

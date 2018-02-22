@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:appContext="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+               x:Class="ServiceRequest.Views.HubMasterView">
+
+  <StackLayout Orientation="Vertical" Spacing="0" Margin="0,-6,0,-5" BackgroundColor="White" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" IsClippedToBounds="True">
+
+    <Label x:Name="Lbl_FilterNotice"
+           HeightRequest="0"
+           TextColor="Black"
+           VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+    </Label>
+
+    <Grid x:Name="GlMain" BackgroundColor="{x:Static appContext:Styles.WindowBackground}" RowSpacing="1" Margin="0,-8,0,0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="94.5*"/>
+        <RowDefinition Height="5.5*"/>
+      </Grid.RowDefinitions>
+
+      <!--Case List-->
+      <Grid x:Name="Gl_CaseList" BackgroundColor="{x:Static appContext:Styles.WindowBackground}" Grid.Row="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="LblSearchHint" Grid.Row="0"
+        HeightRequest="50" FontSize="{x:Static appContext:FontSizeView.CustomFontSizeSmMeSm}" Margin="0,0,0,20"
+        VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand"
+             HorizontalTextAlignment="Center"
+             TextColor="Black"
+             LineBreakMode="WordWrap">
+          <Label.Text>
+            To begin, start by clicking the action icon below.
+          </Label.Text>
+        </Label>
+        <BoxView Grid.Row="0"></BoxView>
+      </Grid>
+      <!--Case List-->
+
+      <!--Sync-->
+      <Grid x:Name="Gl_Footer" Grid.Row="1" BackgroundColor="White"
+              VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="30*" />
+          <ColumnDefinition Width="40*" />
+          <ColumnDefinition Width="30*" />
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="LblDeleteVisit" Margin="0,0,0,10" Grid.Row="0" Grid.Column="0"
+              Text="Delete"
+              TextColor="{x:Static appContext:Styles.MainAccent}"
+              FontSize="{x:Static appContext:FontSizeView.CustomFontSizeMeMeSm}"
+              HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+              HorizontalTextAlignment="End" VerticalTextAlignment="Center" IsVisible="False"/>
+
+
+        <Label x:Name="Lbl_Action" Grid.Row="0" Grid.Column="2"
+               Text="Action" TextColor="{x:Static appContext:Styles.MainAccent}"
+               FontSize="20"
+               HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+               HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+      </Grid>
+      <!--Sync-->
+
+    </Grid>
+  </StackLayout>
+
+
+
+</ContentView>

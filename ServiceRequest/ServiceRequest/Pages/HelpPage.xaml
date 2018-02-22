@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:colors="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Pages.HelpPage" BackgroundColor="Transparent">
+  <CarouselPage.ItemTemplate>
+    <DataTemplate>
+      <ContentPage>
+        <Grid >
+          <Grid.RowDefinitions>
+            <!--Space-->
+            <RowDefinition Height="2*"/>
+            <!--HelpView-->
+            <RowDefinition Height="97*"/>
+            <!--Space-->
+            <RowDefinition Height="1*"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <!--Space-->
+            <ColumnDefinition Width="20*"/>
+            <!--HelpView-->
+            <ColumnDefinition Width="60*"/>
+            <!--Space-->
+            <ColumnDefinition Width="20*"/>
+          </Grid.ColumnDefinitions>
+          <Grid Grid.Row="1" Grid.Column="1" BackgroundColor="White">
+            <Grid.RowDefinitions>
+              <!--Header Grid-->
+              <RowDefinition Height="7*"/>
+              <!--Space-->
+              <RowDefinition Height="1*"/>
+              <!--HelpContent Grid-->
+              <RowDefinition Height="86*"/>
+              <!--PageIndicator-->
+              <RowDefinition Height="6*"/>
+            </Grid.RowDefinitions>
+
+            <!--Header-->
+            <Grid Grid.Row="0" BackgroundColor="#F2F7FA">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="33*"/>
+                <ColumnDefinition Width="34*"/>
+                <ColumnDefinition Width="33*"/>
+              </Grid.ColumnDefinitions>
+              <Label Text="Help" Grid.Column="1" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center"
+                     VerticalOptions="Center" TextColor="Black"/>
+              <Button Text="Done" Clicked="Btn_Done" Grid.Column="2" FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmMeSm}" HorizontalOptions="End"
+                      VerticalOptions="CenterAndExpand" TextColor="#0A7FC8" BackgroundColor="Transparent">
+                      <Button.Margin>
+                          <OnPlatform x:TypeArguments="Thickness" iOS="0,0,7,0"/>
+					  </Button.Margin>
+			  </Button>
+             </Grid>
+
+            <!--HelpContent-->
+            <Grid Grid.Row="2">
+              <Grid.RowDefinitions>
+                <!--HelpImage-->
+                <RowDefinition Height="58*"/>
+                <!--HelpTitle-->
+                <RowDefinition Height="7*"/>
+                <!--Help Description-->
+                <RowDefinition Height="35*"/>
+              </Grid.RowDefinitions>
+
+              <!--HelpImage-->
+              <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="4*"/>
+                  <ColumnDefinition Width="92*"/>
+                  <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding ImagePath}" HeightRequest="950" WidthRequest="650"
+                       VerticalOptions="CenterAndExpand" Aspect="AspectFit" HorizontalOptions="CenterAndExpand"
+                       Grid.Column="1" Margin="55,0,0,0" />
+              </Grid>
+
+              <!--HelpTitle-->
+              <Label Text="{Binding Title}" FontAttributes="Bold" HorizontalOptions="Center"
+                     VerticalOptions="Center" Grid.Row="1" FontSize="Medium" TextColor="Black"/>
+
+              <!--Help Description-->
+              <Grid  Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="2*"/>
+                  <ColumnDefinition Width="98*"/>
+                  <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="{Binding Text}" HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                       BackgroundColor="White" TextColor="Black" Grid.Column="1" FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmMeSm}" />
+              </Grid>
+            </Grid>
+
+            <!--PageIndicator-->
+            <StackLayout BackgroundColor="#F2F7FA" Grid.Row="3">
+              <Label Text="{Binding PageIndicator}" VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="CenterAndExpand" TextColor="Black"/>
+            </StackLayout>
+          </Grid>
+        </Grid>
+      </ContentPage>
+    </DataTemplate>
+  </CarouselPage.ItemTemplate>
+</CarouselPage>

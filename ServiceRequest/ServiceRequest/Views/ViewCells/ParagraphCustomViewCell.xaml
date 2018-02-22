@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<vwcel:SrViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:colors="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Views.ViewCells.ParagraphCustomViewCell"
+          xmlns:vwcel="clr-namespace:ServiceRequest.Custom;assembly=ServiceRequest">
+
+  <Grid Margin="10,0,10,0" BackgroundColor="White" RowSpacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="99*" />
+      <RowDefinition Height="1*" />
+    </Grid.RowDefinitions>
+
+    <Grid  Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="3*" />
+        <ColumnDefinition Width="5*" />
+        <ColumnDefinition Width="87*" />
+        <ColumnDefinition Width="5*" />
+      </Grid.ColumnDefinitions>
+
+      <!--Swap Image-->
+      <Image x:Name="Img_Swap" Source="icondrag.png" Aspect="AspectFit"
+        IsVisible="{Binding IsCellEditable}" HeightRequest="20" WidthRequest="20"
+        HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="0" />
+      <!--Swap Image-->
+
+      <Label Text="{Binding ParagraphType}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor ="Black"
+       VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="1" />
+
+      <!--<Editor x:Name="Txt_CustomText" Text="{Binding Text}" IsVisible="True" TextColor ="Black" HeightRequest="100"
+             VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="2" IsEnabled="True"/>-->
+      <Label x:Name="LblCustomText" TextColor="{x:Static colors:Styles.MainAccent}" Text="{Binding Text}"
+          VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="2"/>
+
+      <Image x:Name="Img_Delete" Source="bin.png" Aspect="AspectFit"
+         IsVisible="{Binding IsEditable}" HeightRequest="40" WidthRequest="40"
+         HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="3" />
+
+    </Grid>
+
+    <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" HeightRequest="1"
+              Grid.Row="1" >
+              <BoxView.BackgroundColor>
+              <OnPlatform x:TypeArguments="Color" iOS="Gray" Android="Gray" WinPhone="Gray"/>
+			</BoxView.BackgroundColor>
+		</BoxView>
+  </Grid>
+
+</vwcel:SrViewCell>
+

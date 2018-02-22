@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:appContext="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Views.PopUp.AddView" 
+             BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+             RowSpacing="0" >
+
+  <Grid.RowDefinitions>
+    <RowDefinition Height="100*" />
+  </Grid.RowDefinitions>
+  <!--Add New Image-->
+  <Grid x:Name="Gl_Add" Grid.Row="0" 
+        VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"
+        BackgroundColor="White">
+    <Label Text="Add New Image" TextColor="{x:Static appContext:Styles.MainAccent}"
+           FontSize="{x:Static appContext:FontSizeView.CustomFontSizeSmMi}" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"/>
+  </Grid>
+</Grid>

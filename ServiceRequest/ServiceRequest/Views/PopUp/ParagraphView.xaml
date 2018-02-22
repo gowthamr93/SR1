@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:colors="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+               xmlns:viewCells="clr-namespace:ServiceRequest.Views.ViewCells;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Views.PopUp.ParagraphView">
+  <Grid Padding="10">
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="7.4*"/>
+      <RowDefinition Height="0.1*"/>
+      <RowDefinition Height="72.5*"/>
+    </Grid.RowDefinitions>
+
+    <Grid x:Name="GL_Title" Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="5*"/>
+        <ColumnDefinition Width="20*"/>
+        <ColumnDefinition Width="50*"/>
+        <ColumnDefinition Width="20*"/>
+        <ColumnDefinition Width="5*"/>
+      </Grid.ColumnDefinitions>
+      <Label x:Name="Lbl_Cancel" Text="Cancel" TextColor="{x:Static colors:Styles.MainAccent}" Grid.Column="1" 
+			HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" 
+				HorizontalTextAlignment="Start" FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmSmMi}" />
+			
+      <Label x:Name="Lbl_Title" Text="Add Paragraphs" TextColor="{x:Static colors:Styles.MainAccent}" Grid.Column="2" 
+			HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" 
+				HorizontalTextAlignment="Center" FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmMeSm}" />
+			
+      <Label x:Name="Lbl_Save" Text="Save" TextColor="{x:Static colors:Styles.MainAccent}" Grid.Column="3"  
+			HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" 
+				HorizontalTextAlignment="End" FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmSmMi}" />
+    </Grid>
+
+    <BoxView Color="Gray" Opacity="0.5" Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+    <Grid Grid.Row="2" BackgroundColor="#F1F1F5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+      <ListView x:Name="Lstvw_TypedParagraphs"  VerticalOptions="Fill" HorizontalOptions="FillAndExpand">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <viewCells:ParagraphViewCell/>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </Grid>
+  </Grid>
+</ContentView>

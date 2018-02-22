@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ServiceRequest.Views.ViewCells.ActionCommentViewCell"
+             xmlns:colors="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest">
+
+  <Grid RowSpacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="99*" />
+      <RowDefinition Height="1*" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions >
+      <ColumnDefinition Width="96*"/>
+      <ColumnDefinition Width="4*"/>
+    </Grid.ColumnDefinitions>
+
+    <Label x:Name="LblCustomText" TextColor="{x:Static colors:Styles.MainAccent}" Text="{Binding Comments}" Grid.Row="0"
+       VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Margin="20,0,0,0" LineBreakMode="TailTruncation"/>
+
+    <Image x:Name="Img_Delete" Source="bin.png" Aspect="AspectFit"
+          HeightRequest="30" WidthRequest="30" Grid.Row="0"
+         HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" Margin="0,20,0,0" Grid.Column="1" />
+		
+    <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" BackgroundColor="Gray"
+             Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+			<BoxView.Margin>
+				<OnPlatform x:TypeArguments="Thickness" Android="10,0,10,0" WinPhone="10,0,10,0" iOS="10,0,10,0"/>
+			</BoxView.Margin>
+      <BoxView.HeightRequest>
+        <OnPlatform x:TypeArguments="x:Double" iOS="0.5" Android="1" WinPhone="0.5" />
+      </BoxView.HeightRequest>
+    </BoxView>
+  </Grid>
+
+</ViewCell>

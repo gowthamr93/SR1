@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExtendedCells.Forms.Plugin.iOSUnified</name>
+    </assembly>
+    <members>
+        <member name="T:ExtendedCells.Forms.Plugin.iOSUnified.ExtendedTextCellRenderer">
+            <summary>
+            SVG Renderer
+            </summary>
+        </member>
+        <member name="M:ExtendedCells.Forms.Plugin.iOSUnified.ExtendedTextCellRenderer.Init">
+            <summary>
+            Used for registration with dependency service
+            </summary>
+        </member>
+        <member name="T:ExtendedCells.Forms.Plugin.Models.NativeiOSCell">
+            <summary>
+            Sample of a custom cell layout, taken from the iOS docs at
+            http://developer.xamarin.com/guides/ios/user_interface/tables/part_3_-_customizing_a_table's_appearance/
+            </summary>
+        </member>
+    </members>
+</doc>

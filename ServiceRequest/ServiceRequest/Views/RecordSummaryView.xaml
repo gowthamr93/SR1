@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ServiceRequest.Views.RecordSummaryView"
+             xmlns:colors="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest">
+  <Grid x:Name="Gl_Main" RowSpacing="1" BackgroundColor="{x:Static colors:Styles.WindowBackground}">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="7.8*"/>
+      <RowDefinition Height="87.2*"/>
+      <RowDefinition Height="5*"/>
+    </Grid.RowDefinitions>
+
+    <!--Header Grid-->
+    <Grid Grid.Row="0" Grid.Column="0"  BackgroundColor="{x:Static colors:Styles.MainAccent}" >
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="2*"/>
+        <ColumnDefinition Width="10*"/>
+        <ColumnDefinition Width="70*"/>
+        <ColumnDefinition Width="3*"/>
+        <ColumnDefinition Width="10*"/>
+        <ColumnDefinition Width="3*"/>
+        <ColumnDefinition Width="1*"/>
+      </Grid.ColumnDefinitions>
+      <!--<Image x:Name="imgBack" Source="back.png" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" Aspect="Fill"/>-->
+      <Label x:Name="Lbl_CaseName" Text="Cancel"
+             FontSize="{x:Static colors:FontSizeView.CustomFontSizeMeMeMi}"
+             HeightRequest="25" VerticalTextAlignment="Center"
+             VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+             TextColor="White"
+             LineBreakMode="TailTruncation" BackgroundColor="Transparent"
+             Grid.Row="0" Grid.Column="1" />
+      <Label x:Name="Lbl_TitleName" Text="Record Summary" BackgroundColor="Transparent" FontSize="{x:Static colors:FontSizeView.CustomFontSizeMeMeMi}"  FontAttributes="Bold"
+             HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White"
+             Grid.Row="0" Grid.Column="2"></Label>
+
+      <!--<Label x:Name="Lbl_MatchAddress" Text="Match Address" BackgroundColor="Transparent" FontSize="{x:Static colors:FontSizeView.CustomFontSizeMeMeMi}"
+          HorizontalOptions="FillAndExpand" FontAttributes="Bold" VerticalOptions="CenterAndExpand" TextColor="White"
+          Grid.Row="0" Grid.Column="4"  IsVisible="false"/>-->
+
+
+      <BoxView x:Name="Boxvw_Add" Grid.Row="0" Grid.Column="5" />
+      <Image x:Name="Img_Add" Source="add.png" Grid.Column="5" VerticalOptions="Center" Grid.Row="0"
+                 HorizontalOptions="FillAndExpand" Aspect="AspectFit" HeightRequest="25" />
+
+
+    </Grid>
+    <!--Header Grid-->
+    <ScrollView Grid.Row="1" Grid.Column="0" IsClippedToBounds="True">
+      <StackLayout Spacing="3">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="97*"/>
+            <ColumnDefinition Width="1*"/>
+          </Grid.ColumnDefinitions>
+          <StackLayout x:Name="S_RecordSummary" Grid.Column="1" Padding="0" Spacing="3">
+          </StackLayout>
+        </Grid>
+      </StackLayout>
+    </ScrollView>
+  </Grid>
+</ContentView>

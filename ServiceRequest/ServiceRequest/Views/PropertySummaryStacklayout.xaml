@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Views.PropertySummaryStacklayout">
+
+  <Label Text="{Binding Title}" TextColor="#A0A0A0" FontSize="{x:Static views:FontSizeView.CustomFontSizeSmSmMi}" Margin="3"></Label>
+  <ListView  x:Name="Lstvw_Main" ItemsSource="{Binding Details}" BackgroundColor="White" ItemTapped="UnSelectList">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+
+          <OnPlatform x:TypeArguments="View">
+            <OnPlatform.Android>
+              <Grid HeightRequest="35">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="30*"  />
+                  <ColumnDefinition Width="70*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="95*"/>
+                  <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Label Text="{Binding Key}" Margin="20,0,0,0" VerticalOptions="CenterAndExpand" TextColor="#515151" Grid.Column="0"/>
+                <Label Text="{Binding Value}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black"  Grid.Column="1"/>
+                <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" BackgroundColor="#EFEFEF" />
+              </Grid>
+            </OnPlatform.Android>
+
+            <OnPlatform.WinPhone>
+              <Grid HeightRequest="35">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="30*"  />
+                  <ColumnDefinition Width="70*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="95*"/>
+                  <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Label Text="{Binding Key}" Margin="20,0,0,0" VerticalOptions="EndAndExpand" TextColor="#515151" Grid.Column="0"/>
+                <Label Text="{Binding Value}" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black"  Grid.Column="1"/>
+                <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" BackgroundColor="#EFEFEF" />
+              </Grid>
+            </OnPlatform.WinPhone>
+
+		 <OnPlatform.iOS>
+              <Grid HeightRequest="35">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="30*"  />
+                  <ColumnDefinition Width="70*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="95*"/>
+                  <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Label Text="{Binding Key}" Margin="20,0,0,0" VerticalOptions="EndAndExpand" TextColor="#515151" Grid.Column="0"/>
+                <Label Text="{Binding Value}" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand" TextColor="Black"  Grid.Column="1"/>
+                <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" BackgroundColor="#EFEFEF" />
+              </Grid>
+            </OnPlatform.iOS>
+          </OnPlatform>
+
+					
+
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+
+</StackLayout>

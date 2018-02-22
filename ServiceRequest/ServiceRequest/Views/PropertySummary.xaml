@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:colors="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             xmlns:views="clr-namespace:ServiceRequest.Views;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Views.PropertySummary" BackgroundColor="{x:Static colors:Styles.WindowBackground}" >
+
+  <Grid x:Name="Gl_Main" RowSpacing="-4">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="7.8*"/>
+      <RowDefinition Height="87.2*"/>
+      <RowDefinition Height="5*"/>
+    </Grid.RowDefinitions>
+
+    <!--Header Grid-->
+    <Grid Grid.Row="0" Grid.Column="0"  BackgroundColor="{x:Static colors:Styles.MainAccent}" >
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="10*"/>
+        <ColumnDefinition Width="70*"/>
+        <ColumnDefinition Width="20*"/>
+      </Grid.ColumnDefinitions>
+      <Label x:Name="Lbl_TitleName" Text="Property Summary" BackgroundColor="Transparent" FontSize="{x:Static colors:FontSizeView.CustomFontSizeMeMeMi}"  FontAttributes="Bold"
+             HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White"
+             Grid.Row="0" Grid.Column="1"></Label>
+      
+      <!--<Label x:Name="Lbl_MatchAddress" Text="Match Address" BackgroundColor="Transparent" FontSize="{x:Static colors:FontSizeView.CustomFontSizeMeMi}" Margin="20,0,0,0" FontAttributes="Bold"
+                   HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" IsVisible="True" Grid.Row="0" Grid.Column="2"/>-->
+    </Grid>
+    <!--Header Grid-->
+
+    <Grid x:Name="Gl_CaseSummary" Grid.Row="1" Grid.Column="0" RowSpacing="-1" Margin="0,2.5,0,0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="30*" />
+        <RowDefinition Height="70*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="100*" />
+      </Grid.ColumnDefinitions>
+
+      <ScrollView Grid.Row="1" Grid.Column="0"  IsClippedToBounds="True">
+        <StackLayout x:Name="Sl_CaseSummary" Padding="20" Spacing="20" VerticalOptions="FillAndExpand" BackgroundColor="{x:Static colors:Styles.WindowBackground}">
+          <StackLayout Spacing="3">
+            <Label x:Name="Lbl_ShortAddress" TextColor="Black" FontSize="{x:Static colors:FontSizeView.CustomFontSizeMeSm}" Text="{Binding Address.ShortAddress}"  FontAttributes="Bold" />
+            <Label x:Name="Lbl_LongAddress" TextColor="Black" Text="{Binding Address.LongAddress}" FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmSmMi}" Margin="0,12,0,0"/>
+          </StackLayout>
+
+          <StackLayout Spacing="3">
+            <Label x:Name="Lbl_FurtherInformation" Text="ATTACHMENTS" TextColor="#A0A0A0" FontSize="{x:Static colors:FontSizeView.CustomFontSizeSmSmMi}" Margin="3"></Label>
+            <Grid HeightRequest="100"
+                  Margin="5"
+                  Padding="0,5,0,0"
+                  BackgroundColor="White">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7.9*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="92*" />
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="31.5*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="31.5*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="31.5*"/>
+                <RowDefinition Height="1.5*"/>
+              </Grid.RowDefinitions>
+
+              <!-- Property Notes Count-->
+              <BoxView x:Name="Boxvw_PropertyNotesCountBackground" BackgroundColor="Transparent"
+                       HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Column="0" Grid.Row="0"/>
+
+              <Label x:Name="Lbl_PropNotesCount" Margin="20,0,0,0" Text="{Binding PropertyNotesCount }"
+                     VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="#515151" Grid.Column="0" Grid.Row="0" />
+
+              <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                     Grid.Row="0" Grid.Column="1" BackgroundColor="#EFEFEF" />
+              <!-- /Property Notes Count-->
+
+              <!-- Property Notes Label-->
+              <BoxView x:Name="Boxvw_PropertyNotesBackground" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                       Grid.Row="0" Grid.Column="2"/>
+
+              <Label x:Name="Lbl_Notes" Text="Property Notes" VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="StartAndExpand" TextColor="Black" Grid.Row="0" Grid.Column="2"/>
+
+              <Image x:Name="Img_Notes" Source="chevron.png" Grid.Row="0" Grid.Column="2"  Aspect="AspectFit"
+                     IsVisible="True" HeightRequest="17" WidthRequest="17"
+                     HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
+
+              <BoxView HorizontalOptions="FillAndExpand" Margin="20,0,0,0" VerticalOptions="FillAndExpand"
+                       Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" BackgroundColor="#EFEFEF" />
+              <!-- Property Notes Label-->
+
+              <!-- Property History Count-->
+              <BoxView x:Name="Boxvw_PropertyHistoryCountBackground" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                      Grid.Row="2" Grid.Column="0"/>
+
+              <Label x:Name="Lbl_PropHistoryCount" Margin="20,0,0,0" Text="{Binding PropertyHistoryCount}"
+                     VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                     TextColor="#515151" Grid.Row="2" Grid.Column="0" />
+
+              <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                       Grid.Row="2" Grid.Column="1" BackgroundColor="#EFEFEF" />
+              <!-- Property History Count-->
+
+              <!-- Property History Label-->
+              <BoxView x:Name="Boxvw_PropertyHistoryBackground" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                      Grid.Row="2"  Grid.Column="2"/>
+
+              <Label x:Name="Lbl_PropHistory" Text="Property History" VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="StartAndExpand" TextColor="Black" Grid.Row="2"  Grid.Column="2"/>
+
+              <Image x:Name="Img_History" Source="chevron.png" Grid.Row="2" Grid.Column="2"  Aspect="AspectFit" IsVisible="True"
+                     HeightRequest="17" WidthRequest="17" HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
+
+              <BoxView HorizontalOptions="FillAndExpand" Margin="20,0,0,0" VerticalOptions="FillAndExpand"
+                       Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" BackgroundColor="#EFEFEF" />
+              <!-- Property History Label-->
+
+              <!-- Document Count-->
+              <BoxView x:Name="Boxvw_DocumentCountBackground" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                      Grid.Row="4" Grid.Column="0"/>
+
+              <Label x:Name="Lbl_DocumentsCount" Margin="20,0,0,0" Text="{Binding DocumentCount}"
+                     VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                     TextColor="#515151" Grid.Row="4" Grid.Column="0" />
+
+              <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                       Grid.Row="4" Grid.Column="1" BackgroundColor="#EFEFEF" />
+              <!-- Document Count-->
+
+              <!-- Document Label-->
+              <BoxView x:Name="Boxvw_DocumentBackground" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                      Grid.Row="4"  Grid.Column="2"/>
+
+              <Label x:Name="Lbl_Documents" Text="Documents" VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="StartAndExpand" TextColor="Black" Grid.Row="4"  Grid.Column="2"/>
+
+              <Image x:Name="Img_Documents"  Source="chevron.png" Grid.Row="4" Grid.Column="2"  Aspect="AspectFit" IsVisible="True"
+                     HeightRequest="17" WidthRequest="17" HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
+
+              <BoxView HorizontalOptions="FillAndExpand" Margin="20,0,0,0" VerticalOptions="FillAndExpand"
+                       Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="5" BackgroundColor="#EFEFEF" />
+              <!-- Document Label-->
+            </Grid>
+            <StackLayout x:Name="Sl_Summary">
+            </StackLayout>
+          </StackLayout>
+        </StackLayout>
+      </ScrollView>
+
+    </Grid>
+  </Grid>
+
+</ContentView>

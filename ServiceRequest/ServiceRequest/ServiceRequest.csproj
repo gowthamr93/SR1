@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69D75A29-AA19-4F50-BE7C-9CEA6FD3A6C2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ServiceRequest</RootNamespace>
+    <AssemblyName>ServiceRequest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="AppContext\FontSizeView.cs" />
+    <Compile Include="AppContext\LogTracking.cs" />
+    <Compile Include="AppContext\modEnumerations.cs" />
+    <Compile Include="AppContext\AppContext.cs" />
+    <Compile Include="AppContext\Reachability.cs" />
+    <Compile Include="AppContext\RequestResponseEventArgs.cs" />
+    <Compile Include="AppContext\ServiceClient.cs" />
+    <Compile Include="AppContext\Styles.cs" />
+    <Compile Include="Classes\ContentController.cs" />
+    <Compile Include="Classes\CameraCapture.cs" />
+    <Compile Include="Classes\ErrorReport.cs" />
+    <Compile Include="Custom\SrEditor.cs" />
+    <Compile Include="Custom\SrTableView.cs" />
+    <Compile Include="Custom\SrPicker.cs" />
+    <Compile Include="Custom\WrapLayout.cs" />
+    <Compile Include="DependencyInterfaces\IDeviceInfo.cs" />
+    <Compile Include="DependencyInterfaces\IFileViewer.cs" />
+    <Compile Include="DependencyInterfaces\IInputDialog.cs" />
+    <Compile Include="DependencyInterfaces\INativePopup.cs" />
+    <Compile Include="DependencyInterfaces\IRecorder.cs" />
+    <Compile Include="DependencyInterfaces\ISendMail.cs" />
+    <Compile Include="DependencyInterfaces\IWebManager.cs" />
+    <Compile Include="Models\AddNewCaseModel.cs" />
+    <Compile Include="Models\DeviceInfoModel.cs" />
+    <Compile Include="Models\GroupedListModel.cs" />
+    <Compile Include="Models\FilterByRequestType.cs" />
+    <Compile Include="Models\GroupedRequestGroupModel.cs" />
+    <Compile Include="Models\HelpContent.cs" />
+    <Compile Include="Models\ListInputsModel.cs" />
+    <Compile Include="Models\ShortIndexMapping.cs" />
+    <Compile Include="Models\SRiRequestGroupModel.cs" />
+    <Compile Include="Pages\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HelpPage.xaml.cs">
+      <DependentUpon>HelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\CustomMap.cs" />
+    <Compile Include="Custom\CustomPin.cs" />
+    <Compile Include="Custom\SRiButton.cs" />
+    <Compile Include="DependencyInterfaces\IMapView.cs" />
+    <Compile Include="DependencyInterfaces\IFileSystem.cs" />
+    <Compile Include="Pages\SplitView.xaml.cs">
+      <DependentUpon>SplitView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\VisitActionDetailsPage.xaml.cs">
+      <DependentUpon>VisitActionDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\VisitActionPage.xaml.cs">
+      <DependentUpon>VisitActionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AppContext\ModExtensions.cs" />
+    <Compile Include="Classes\API.cs" />
+    <Compile Include="ViewModels\AddNewCaseViewModel.cs" />
+    <Compile Include="ViewModels\DocumentViewModel.cs" />
+    <Compile Include="ViewModels\GroupedListViewModel.cs" />
+    <Compile Include="ViewModels\HelpViewModel.cs" />
+    <Compile Include="ViewModels\MapViewModel.cs" />
+    <Compile Include="ViewModels\ParagraphViewModel.cs" />
+    <Compile Include="ViewModels\RecordDetailsViewModel.cs" />
+    <Compile Include="ViewModels\RequestGroupViewModel.cs" />
+    <Compile Include="Views\AddNewCasePointOnMapView.xaml.cs">
+      <DependentUpon>AddNewCasePointOnMapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddNewCaseView.xaml.cs">
+      <DependentUpon>AddNewCaseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AndroidMapView.xaml.cs">
+      <DependentUpon>AndroidMapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CaseListViewControl\CaseListControl.cs" />
+    <Compile Include="Views\CaseListViewControl\CaseListModel.cs" />
+    <Compile Include="Views\ContactDetailsView.xaml.cs">
+      <DependentUpon>ContactDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DocumentListView.xaml.cs">
+      <DependentUpon>DocumentListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditLocationMapView.xaml.cs">
+      <DependentUpon>EditLocationMapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FilterByRequest.xaml.cs">
+      <DependentUpon>FilterByRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FullMapView.xaml.cs">
+      <DependentUpon>FullMapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HyperLinkLabel.xaml.cs">
+      <DependentUpon>HyperLinkLabel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InspectionCellView.xaml.cs">
+      <DependentUpon>InspectionCellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PinView.xaml.cs">
+      <DependentUpon>PinView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\ActionView.xaml.cs">
+      <DependentUpon>ActionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\AddActionView.xaml.cs">
+      <DependentUpon>AddActionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\AddNewAudioView.xaml.cs">
+      <DependentUpon>AddNewAudioView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\AddNewImageView.xaml.cs">
+      <DependentUpon>AddNewImageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\AddressesNearbyView.xaml.cs">
+      <DependentUpon>AddressesNearbyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\AddVisitPopupView.xaml.cs">
+      <DependentUpon>AddVisitPopupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\AddVisitsPopUp.xaml.cs">
+      <DependentUpon>AddVisitsPopUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\CommentsPopup.xaml.cs">
+      <DependentUpon>CommentsPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\EditorPopup.xaml.cs">
+      <DependentUpon>EditorPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\GroupedListView.xaml.cs">
+      <DependentUpon>GroupedListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\ParagraphView.xaml.cs">
+      <DependentUpon>ParagraphView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\RequestErrorPopup.xaml.cs">
+      <DependentUpon>RequestErrorPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\ResolutionView.xaml.cs">
+      <DependentUpon>ResolutionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PropertyHistory.xaml.cs">
+      <DependentUpon>PropertyHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PropertyNotesView.xaml.cs">
+      <DependentUpon>PropertyNotesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PropertySummary.xaml.cs">
+      <DependentUpon>PropertySummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PropertySummaryStacklayout.xaml.cs">
+      <DependentUpon>PropertySummaryStacklayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RecordSummaryStackLayout.xaml.cs">
+      <DependentUpon>RecordSummaryStackLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RecordSummaryView.xaml.cs">
+      <DependentUpon>RecordSummaryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SyncStatusView.xaml.cs">
+      <DependentUpon>SyncStatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewCells\ActionCommentViewCell.xaml.cs">
+      <DependentUpon>ActionCommentViewCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewCells\InspectionCellViewCell.xaml.cs">
+      <DependentUpon>InspectionCellViewCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewCells\ParagraphCustomViewCell.xaml.cs">
+      <DependentUpon>ParagraphCustomViewCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewCells\ParagraphInputViewCell.xaml.cs">
+      <DependentUpon>ParagraphInputViewCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewCells\ParagraphNormalViewCell.xaml.cs">
+      <DependentUpon>ParagraphNormalViewCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewCells\ParagraphViewCell.xaml.cs">
+      <DependentUpon>ParagraphViewCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewCells\PropertyHistoryViewCell.xaml.cs">
+      <DependentUpon>PropertyHistoryViewCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\FileSystem.cs" />
+    <Compile Include="Views\HubMasterView.xaml.cs">
+      <DependentUpon>HubMasterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InspectionCountView.xaml.cs">
+      <DependentUpon>InspectionCountView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\EnvironmentsView.xaml.cs">
+      <DependentUpon>EnvironmentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\FilterView.xaml.cs">
+      <DependentUpon>FilterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\MenuView.xaml.cs">
+      <DependentUpon>MenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\PopupLayouts.cs" />
+    <Compile Include="Views\PopUp\SearchView.xaml.cs">
+      <DependentUpon>SearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewCells\PropertyNotesViewCell.xaml.cs">
+      <DependentUpon>PropertyNotesViewCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewCells\RecordSummaryStackLayoutViewCell.xaml.cs">
+      <DependentUpon>RecordSummaryStackLayoutViewCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewCells\VisitActionDetailsViewCell.xaml.cs">
+      <DependentUpon>VisitActionDetailsViewCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VisitsView.xaml.cs">
+      <DependentUpon>VisitsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowsMapView.xaml.cs">
+      <DependentUpon>WindowsMapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CaseCellList.xaml.cs">
+      <DependentUpon>CaseCellList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DependencyInterfaces\IDisplayAlertPopup.cs" />
+    <Compile Include="Views\PopUp\PopupInstanceLayout.cs" />
+    <Compile Include="AppContext\PageNavigation.cs" />
+    <Compile Include="Classes\LockScreen.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GettingStarted.Xamarin" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PopUp\ActionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PopUp\AddNewAudioView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PropertySummaryStacklayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WindowsMapView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\CaseCellList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\SplitView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\FullMapView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ModernHttpClient, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\modernhttpclient.2.4.2\lib\Portable-Net45+WinRT45+WP8+WPA81\ModernHttpClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v6.0\Mono.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity, Version=2.2.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Connectivity.2.2.12\lib\portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+Xamarin.Mac20+UAP10\Plugin.Connectivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions, Version=2.2.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Connectivity.2.2.12\lib\portable-net45+wp80+wp81+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+Xamarin.Mac20+UAP10\Plugin.Connectivity.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Geolocator, Version=3.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Geolocator.3.0.4\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Geolocator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Geolocator.Abstractions, Version=3.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Geolocator.3.0.4\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Geolocator.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Media, Version=2.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Media.2.6.1\lib\portable-net45+wp80+win8+wpa81\Plugin.Media.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Media.Abstractions, Version=2.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Media.2.6.1\lib\portable-net45+wp80+win8+wpa81\Plugin.Media.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Windows.Foundation.UniversalApiContract">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Windows Kits\10\References\Windows.Foundation.UniversalApiContract\1.0.0.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.3.193\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.3.193\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.3.193\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps">
+      <HintPath>..\..\packages\Xamarin.Forms.Maps.2.3.3.193\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10\Xamarin.Forms.Maps.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.GoogleMaps">
+      <HintPath>..\..\packages\Xamarin.Forms.GoogleMaps.1.7.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Xamarin.Forms.GoogleMaps.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\AndroidMapView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="GettingStarted.Xamarin" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PropertyNotesView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PropertySummary.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\InspectionCountView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\client\client.csproj">
+      <Project>{67f9d3a8-f71e-4428-913f-c37ae82cdb24}</Project>
+      <Name>client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnSite\OnSite.csproj">
+      <Project>{e8608280-a30f-4b27-b93b-b1dd3a4563bf}</Project>
+      <Name>OnSite</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\HubMasterView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PopUp\MenuView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PopUp\FilterView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PopUp\SearchView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PopUp\EnvironmentsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\client\client.csproj">
+      <Project>{67F9D3A8-F71E-4428-913F-C37AE82CDB24}</Project>
+      <Name>client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnSite\OnSite.csproj">
+      <Project>{E8608280-A30F-4B27-B93B-B1DD3A4563BF}</Project>
+      <Name>OnSite</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="sr_cpinfo.txt" />
+    <EmbeddedResource Include="sr_srrec.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="sr_cnapplprop.txt" />
+    <EmbeddedResource Include="sr_cnofficer.txt" />
+    <EmbeddedResource Include="sr_config.txt" />
+    <EmbeddedResource Include="sr_config_cpinfo.txt" />
+    <EmbeddedResource Include="sr_config_licase.txt" />
+    <EmbeddedResource Include="sr_config_srrec.txt" />
+    <EmbeddedResource Include="sr_config_xivisit.txt" />
+    <EmbeddedResource Include="sr_licase.txt" />
+    <EmbeddedResource Include="sr_prnotepad.txt" />
+    <EmbeddedResource Include="sr_xivisit.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\AboutPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\HelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PropertyHistory.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewCells\PropertyHistoryViewCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ViewCells\PropertyNotesViewCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\RecordSummaryView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PopUp\AddNewImageView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\InspectionCellView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\SyncStatusView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\RecordSummaryStackLayout.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ViewCells\ParagraphViewCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PopUp\ParagraphView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PopUp\GroupedListView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ViewCells\ParagraphCustomViewCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PopUp\AddVisitPopupView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="sr_docs.txt" />
+    <EmbeddedResource Include="nms.png" />
+    <Content Include="testCaseCache.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\DocumentListView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PopUp\AddActionView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PinView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ViewCells\VisitActionDetailsViewCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PopUp\AddVisitsPopUp.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\VisitActionDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\VisitActionPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\VisitsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ViewCells\ParagraphNormalViewCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ViewCells\ParagraphInputViewCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\HyperLinkLabel.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\FilterByRequest.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PopUp\EditorPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ViewCells\ActionCommentViewCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\AddNewCaseView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ViewCells\InspectionCellViewCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\AddNewCasePointOnMapView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PopUp\CommentsPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PopUp\AddressesNearbyView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ViewCells\RecordSummaryStackLayoutViewCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ContactDetailsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\EditLocationMapView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PopUp\ResolutionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PopUp\RequestErrorPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+</Project>

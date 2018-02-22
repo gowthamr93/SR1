@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ServiceRequest.Views.PopUp.AddNewImageView"
+             xmlns:views="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             xmlns:colors="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+			 xmlns:btn="clr-namespace:ServiceRequest.Custom;assembly=ServiceRequest">
+
+  <Grid Padding="10">
+    <Grid.RowDefinitions>
+      <!--Header Grid-->
+      <RowDefinition Height="7.9*"/>
+      <!--Seperator Line-->
+      <RowDefinition Height="0.1*"/>
+      <RowDefinition Height="8*"/>
+      <!--<RowDefinition Height="11*"/>-->
+      <RowDefinition Height="8*"/>
+      <RowDefinition Height="76*"/>
+    </Grid.RowDefinitions>
+
+    <!--Header Grid-->
+    <Grid x:Name="GL_Title" Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="10*"/>
+        <ColumnDefinition Width="20*"/>
+        <ColumnDefinition Width="40*"/>
+        <ColumnDefinition Width="20*"/>
+        <ColumnDefinition Width="10*"/>
+      </Grid.ColumnDefinitions>
+
+      <Label x:Name="Lbl_Cancel" Text="Cancel" TextColor="#178FFE" Grid.Column="1" FontSize="{x:Static views:FontSizeView.CustomFontSizeMeMeMi}"
+             HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+
+      <Label x:Name="Lbl_Title" Text="Image Details" Grid.Column="2" FontSize="{x:Static views:FontSizeView.CustomFontSizeSmSmMi}" TextColor="Black"
+            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+      <Label x:Name="Btn_Save" Text="Save"  TextColor="#178FFE" Grid.Column="3" FontSize="{x:Static views:FontSizeView.CustomFontSizeMeMeMi}" HorizontalTextAlignment="End" VerticalTextAlignment="Center">
+        <Label.VerticalOptions>
+              	<OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="FillAndExpand" WinPhone="FillAndExpand"></OnPlatform>
+				</Label.VerticalOptions>
+        <Label.HorizontalOptions>
+              	<OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="FillAndExpand" WinPhone="FillAndExpand"></OnPlatform>
+				</Label.HorizontalOptions>
+			</Label>
+    </Grid>
+
+    <!--Seperator Line-->
+    <BoxView Color="Gray" Opacity="0.5" Grid.Row="1"/>
+
+    <!--Image-->
+    <Image x:Name="Img_Image" Aspect="Fill" Grid.Row="4" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+    <!--Details-->
+
+    <Entry x:Name="Txt_ImageName" Placeholder="The Name of the Photo" Grid.Row="2" PlaceholderColor="Gray" TextColor="Black"
+           HorizontalTextAlignment="Center">
+
+           <Entry.HorizontalOptions>
+           <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" WinPhone="FillAndExpand" Android="FillAndExpand"></OnPlatform>
+			</Entry.HorizontalOptions>
+			<Entry.VerticalOptions>
+					<OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+		  </Entry.VerticalOptions>
+		</Entry>
+
+    <Entry x:Name="Txt_ImageDescription" Placeholder="A Description of the Photo" Grid.Row="3" PlaceholderColor="Gray" TextColor="Black"
+           HorizontalTextAlignment="Center" >
+           <Entry.HorizontalOptions>
+           <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" WinPhone="FillAndExpand" Android="FillAndExpand"></OnPlatform>
+			</Entry.HorizontalOptions>
+			<Entry.VerticalOptions>
+					<OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+		  </Entry.VerticalOptions>
+		</Entry>
+  </Grid>
+
+</ContentView>

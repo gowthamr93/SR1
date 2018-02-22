@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:appContext="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Views.PopUp.MenuView"
+             BackgroundColor="{x:Static appContext:Styles.MainAccent}"
+             HeightRequest="200" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+ <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  BackgroundColor="White">
+		<StackLayout.Margin>
+		<OnPlatform x:TypeArguments="Thickness" iOS="0,10,0,0" Android="0,0,0,-10" WinPhone="0,0,0,-10"/>
+		</StackLayout.Margin>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="30*"/>
+        <RowDefinition Height="25*"/>
+        <RowDefinition Height="25*"/>
+        <RowDefinition Height="25*"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="5*"/>
+        <ColumnDefinition Width="95*"/>
+      </Grid.ColumnDefinitions>
+      <!--LogOut Menu-->
+      <Grid  Grid.Row="0" Grid.Column="1" Margin="0,5,0,0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="97*"/>
+          <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <BoxView x:Name="Boxvw_LogOut" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0"/>
+        <Label x:Name="Lbl_LogOut" Text="Log Out"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+						VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+               TextColor="{x:Static appContext:Styles.MainAccent}" Grid.Row="0" FontSize="{x:Static appContext:FontSizeView.CustomFontSizeMeSmMi}"/>
+        <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+                 WidthRequest="10" Grid.Column="0" Grid.Row="1" BackgroundColor="#aaaaaa"/>
+      </Grid>
+      <!--Help Menu-->
+      <Grid  Grid.Row="1" Grid.Column="1" >
+        <Grid.RowDefinitions>
+          <RowDefinition Height="97*"/>
+          <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <BoxView x:Name="Boxvw_Help" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0"/>
+        <Label x:Name="Lbl_Help" Text="Help"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+						VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+               TextColor="{x:Static appContext:Styles.MainAccent}" FontSize="{x:Static appContext:FontSizeView.CustomFontSizeMeSmMi}" Grid.Row="0"  />
+        <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+                 WidthRequest="10" Grid.Column="0" Grid.Row="1" BackgroundColor="#aaaaaa" />
+      </Grid>
+      <!--About Menu-->
+      <Grid Grid.Row="2" Grid.Column="1" >
+        <Grid.RowDefinitions>
+          <RowDefinition Height="97*"/>
+          <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <BoxView x:Name="Boxvw_About" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0"/>
+        <Label x:Name="Lbl_About" Text="About" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+						VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+               TextColor="{x:Static appContext:Styles.MainAccent}" Grid.Row="0" FontSize="{x:Static appContext:FontSizeView.CustomFontSizeMeSmMi}" />
+        <BoxView  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+                 WidthRequest="10" Grid.Column="0" Grid.Row="1" BackgroundColor="#aaaaaa" />
+      </Grid>
+
+      <!--Clear Content Menu-->
+      <Grid  Grid.Row="3" Grid.Column="1" >
+        <Grid.RowDefinitions>
+          <RowDefinition Height="97*"/>
+          <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <BoxView x:Name="Boxvw_ClrContent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0"/>
+        <Label x:Name="Lbl_ClrContent" Text="Clear Content"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+						VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+               TextColor="{x:Static appContext:Styles.MainAccent}" Grid.Row="0" FontSize="{x:Static appContext:FontSizeView.CustomFontSizeMeSmMi}"/>
+        <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+                 WidthRequest="10" Grid.Column="0" Grid.Row="1" BackgroundColor="#aaaaaa"/>
+      </Grid>
+    </Grid>
+  </StackLayout>
+	</StackLayout>
+</Grid>

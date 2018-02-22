@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:colors="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+		     xmlns:edtr="clr-namespace:ServiceRequest.Custom;assembly=ServiceRequest"
+		     xmlns:pkr="clr-namespace:ServiceRequest.Custom;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Views.AddNewCaseView"
+              xmlns:btn="clr-namespace:ServiceRequest.Custom;assembly=ServiceRequest" BackgroundColor="{x:Static colors:Styles.WindowBackground}">
+	
+             <!--Resource added for Border style of Notes Editor-->
+		<ContentPage.Resources>
+    <ResourceDictionary x:Name="AppDictionary">
+      <Color x:Key="BackgroundColor">#FFFFFF</Color>
+      <Color x:Key="BorderColor">#E1E1E1</Color>
+      <Style x:Key="BorderStyle" TargetType="ContentView">
+        <Setter Property="BackgroundColor" Value="{StaticResource BorderColor}"/>
+        <Setter Property="Padding" Value="1,1,1,1"></Setter>
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+	
+  <Grid x:Name="Gl_Main" RowSpacing="-4" >
+    <Grid.RowDefinitions>
+      <RowDefinition Height="8.1*"/>
+      <RowDefinition Height="86.9*"/>
+      <RowDefinition Height="5*"/>
+    </Grid.RowDefinitions>
+
+    <!--Header Grid-->
+    <Grid Grid.Row="0" Grid.Column="0" ColumnSpacing="0" BackgroundColor="{x:Static colors:Styles.MainAccent}">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="10*"/>
+        <ColumnDefinition Width="75*"/>
+        <ColumnDefinition Width="15*"/>
+      </Grid.ColumnDefinitions>
+      <BoxView x:Name="Boxvw_Cancel" Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+      <Label x:Name="LblCancel" Text="Cancel" BackgroundColor="Transparent" TextColor="White" FontSize="{x:Static colors:FontSizeView.CustomFontSizeMeMeMi}"
+             HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0" />
+
+      <Label x:Name="LblTitle" Text="New Service Request" BackgroundColor="Transparent" FontAttributes="Bold" FontSize="{x:Static colors:FontSizeView.CustomFontSizeMeMeMi}"
+             HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" Margin="0,0,5,0"
+             Grid.Row="0" Grid.Column="1"/>
+      <BoxView x:Name="Boxvw_Save" Grid.Row="0" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+      <Label x:Name="LblSave" Text="Save" BackgroundColor="Transparent" FontAttributes="Bold" TextColor="White"
+          FontSize="{x:Static colors:FontSizeView.CustomFontSizeMeMeMi}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+             HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="2"/>    
+    </Grid>
+    <!--Header Grid-->
+
+    <!--New Case Details-->
+
+
+		    <Grid x:Name="Gl_RadiusPoint" RowSpacing="-1" Grid.Row="1" Grid.Column="0" >
+      <Grid.RowDefinitions>
+        <RowDefinition Height="30*" />
+        <RowDefinition Height="70*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="100*" />
+      </Grid.ColumnDefinitions>
+
+      <!--<ScrollView >-->
+      <StackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="{x:Static colors:Styles.WindowBackground}"  >
+        <StackLayout BackgroundColor="{x:Static colors:Styles.WindowBackground}">
+          <StackLayout x:Name="SlCaseDetails" Padding="10" Orientation="Vertical" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+         
+            <BoxView HeightRequest="5" BackgroundColor="Transparent" />
+            <!--Trading Name-->
+            <Grid Margin="10,0,0,0">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="70*"/>
+              </Grid.ColumnDefinitions>
+              <Grid.HeightRequest>
+                <OnPlatform x:TypeArguments="x:Double" Android="130" WinPhone="40" iOS="40"/>
+              </Grid.HeightRequest>
+              <Label Text="Trading Name" TextColor="Gray" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" Grid.Column="0"/>
+              <ContentView  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="1" >
+                <ContentView.Opacity>
+                  <OnPlatform x:TypeArguments="x:Double" iOS="1" WinPhone="1" Android="1" />
+                </ContentView.Opacity>
+                <ContentView Style="{StaticResource BorderStyle}" >
+                  <Entry x:Name="TxtTradeName" Grid.Column="1"  HorizontalTextAlignment="Start" Placeholder="Trading Name" 
+                         TextColor="Black" IsVisible="{Binding NewCaseisOnline}" WidthRequest="50">
+                   
+                  </Entry>
+                </ContentView>
+              </ContentView>
+            </Grid>
+            <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="0.5" Margin="10,0,0,0" BackgroundColor="{x:Static colors:Styles.WindowBackground}" />
+            <!--Address-->
+            <Grid Margin="10,0,0,0" HeightRequest="100">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="70*"/>
+              </Grid.ColumnDefinitions>
+              <Grid.HeightRequest>
+                <OnPlatform x:TypeArguments="x:Double" Android="300" WinPhone="100" iOS="100"/>
+              </Grid.HeightRequest>
+              <Label Text="Address" TextColor="Gray" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" Grid.Column="0"/>
+
+              <StackLayout Grid.Column="1">
+                <Grid x:Name="GL_Address">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70*"/>
+                    <ColumnDefinition Width="30*"/>
+                  </Grid.ColumnDefinitions>
+
+										 <ContentView Margin="0,5,0,0"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="0" >
+								<ContentView.Opacity>
+								<OnPlatform x:TypeArguments="x:Double" iOS="1" WinPhone="1" Android="1.5" />
+								</ContentView.Opacity>
+						    <ContentView Style="{StaticResource BorderStyle}" >
+			       <edtr:SrEditor x:Name="EdAddress" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+									Text="{Binding NewCaseDetails}" Grid.Column="0" 	IsVisible="true" >
+              
+								</edtr:SrEditor>
+						      </ContentView>
+				    	 </ContentView>
+										
+                 <!-- <edtr:SrEditor x:Name="EdAddress" Grid.Column="0" HorizontalOptions="StartAndExpand" WidthRequest="500" TextColor="{x:Static colors:Styles.MainAccent}"/>-->
+                  <Grid x:Name="GL_SearchAddress" Grid.Column="1" >
+                    <Grid.RowSpacing>
+                      <OnPlatform x:TypeArguments="x:Double" Android="-5" WinPhone="2" iOS="2"/>
+                    </Grid.RowSpacing>
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="45*" />
+                      <RowDefinition Height="45*" />
+                      <RowDefinition Height="10*" />
+                    </Grid.RowDefinitions>
+                   
+                    <btn:SRiButton x:Name="Bt_SearchAddress" Grid.Row="0" Text="Choose Address" TextColor="{x:Static colors:Styles.MainAccent}" FontSize="12"
+                            HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" />
+                    <btn:SRiButton x:Name="Bt_EditLocation" Grid.Row="1" Text="Edit Location" TextColor="{x:Static colors:Styles.MainAccent}" FontSize="12"
+                          HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" />
+                      
+                    <Label x:Name="Lbl_Network" FontSize="12" Grid.Row="2" Margin="3,-4,0,-5" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" />
+                  </Grid>
+
+                </Grid>
+                <Label x:Name="Lbl_UPRN" FontSize="12"/>
+              </StackLayout>
+
+            </Grid>
+            <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="0.5" Margin="10,0,0,0" BackgroundColor="{x:Static colors:Styles.WindowBackground}" />
+
+            <!--SRType-->
+            <Grid Margin="10,0,0,0">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="70*"/>
+              </Grid.ColumnDefinitions>
+              <Grid.HeightRequest>
+                <OnPlatform x:TypeArguments="x:Double" Android="110" WinPhone="40" iOS="40"/>
+              </Grid.HeightRequest>
+              <Label Text="Request Type" TextColor="Gray" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" Grid.Column="0"/>
+
+              <pkr:SrPicker x:Name="PkrRequestType" Grid.Column="1" Margin="0,0,10,0" HorizontalOptions="FillAndExpand" TextColor="{x:Static colors:Styles.MainAccent}" IsVisible="True" WidthRequest="200">
+               
+              </pkr:SrPicker>
+            </Grid>
+
+            <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="0.5" Margin="10,0,0,0" BackgroundColor="{x:Static colors:Styles.WindowBackground}" />
+
+            <!--InspectionType-->
+            <Grid Margin="10,0,0,0">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="70*"/>
+              </Grid.ColumnDefinitions>
+              <Grid.HeightRequest>
+                <OnPlatform x:TypeArguments="x:Double" Android="110" WinPhone="40" iOS="40"/>
+              </Grid.HeightRequest>
+              <Label Text="Inspection Type" TextColor="Gray" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" Grid.Column="0"/>
+
+              <pkr:SrPicker x:Name="PkrInspectionType" Grid.Column="1" Margin="0,0,10,0" HorizontalOptions="FillAndExpand" TextColor="{x:Static colors:Styles.MainAccent}" IsVisible="True" WidthRequest="200">
+             
+              </pkr:SrPicker>
+            </Grid>
+
+            <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="0.5" Margin="10,0,0,0" BackgroundColor="{x:Static colors:Styles.WindowBackground}" />
+
+            <!--Recieved-->
+            <Grid Margin="10,0,0,0">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="70*"/>
+              </Grid.ColumnDefinitions>
+              <Grid.HeightRequest>
+                <OnPlatform x:TypeArguments="x:Double" Android="110" WinPhone="40" iOS="40"/>
+              </Grid.HeightRequest>
+              <Label Text="Received" TextColor="Gray" VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="StartAndExpand" Grid.Column="0"/>
+
+              <StackLayout Orientation="Horizontal" Spacing="10" Grid.Column="1" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                <pkr:SrDatePicker x:Name="RcvdDueDate" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BackgroundColor="White" TextColor="{x:Static colors:Styles.MainAccent}" WidthRequest="200">
+                  
+                  </pkr:SrDatePicker>
+                <pkr:SrTimePicker x:Name="RcvdDueTime" TextColor="{x:Static colors:Styles.MainAccent}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" WidthRequest="200" >
+                  
+                  </pkr:SrTimePicker>
+              </StackLayout>
+            </Grid>
+            <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="0.5" Margin="10,0,0,0"
+                         BackgroundColor="{x:Static colors:Styles.WindowBackground}" />
+
+            <!--Property Details-->
+            <Grid Margin="10,0,0,0" HeightRequest="100">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="70*"/>
+              </Grid.ColumnDefinitions>
+              <Grid.HeightRequest>
+                <OnPlatform x:TypeArguments="x:Double" Android="140" WinPhone="100" iOS="110"/>
+              </Grid.HeightRequest>
+              <Label Text="Details" TextColor="Gray" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"
+                     Grid.Column="0"/>
+
+             <!-- <edtr:SrEditor x:Name="EdPropertyDetails" Text="{Binding NewCaseDetails}" Grid.Column="1" Margin="0,0,10,0" HorizontalOptions="FillAndExpand" TextColor="{x:Static colors:Styles.MainAccent}" />-->
+								<!--Border for Editor-->
+						 <ContentView Margin="0,5,0,0"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="1" >
+								<ContentView.Opacity>
+								<OnPlatform x:TypeArguments="x:Double" iOS="1" WinPhone="1" Android="1" />
+								</ContentView.Opacity>
+						    <ContentView Style="{StaticResource BorderStyle}" >
+			       <edtr:SrEditor x:Name="EdPropertyDetails" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+									Text="{Binding NewCaseDetails}" Grid.Column="1"	Placeholder="Please fill the details"	IsVisible="true" >
+								</edtr:SrEditor>
+						      </ContentView>
+				    	 </ContentView>
+            </Grid>
+
+            <BoxView HeightRequest="5" BackgroundColor="Transparent"/>
+
+          </StackLayout>
+        </StackLayout>
+
+      </StackLayout>
+    </Grid>
+		
+    <!--</ScrollView>-->
+  </Grid>
+		
+</ContentView>

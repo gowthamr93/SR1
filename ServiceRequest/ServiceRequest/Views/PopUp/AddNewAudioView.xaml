@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ServiceRequest.Views.PopUp.AddNewAudioView"
+              xmlns:views="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             xmlns:colors="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest">
+  <Grid Padding="10">
+    <Grid.RowDefinitions>
+      <!--Header Grid-->
+      <RowDefinition Height="7.4*"/>
+      <!--Seperator Line-->
+      <RowDefinition Height="0.1*"/>
+      <!--Audio Recorder-->
+      <RowDefinition Height="72.5*"/>
+    </Grid.RowDefinitions>
+
+    <!--Header Grid-->
+    <Grid x:Name="GL_Title" Grid.Row="0" >
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="10*"/>
+        <ColumnDefinition Width="20*"/>
+        <ColumnDefinition Width="40*"/>
+        <ColumnDefinition Width="20*"/>
+        <ColumnDefinition Width="10*"/>
+      </Grid.ColumnDefinitions>
+
+      <Label x:Name="Lbl_Cancel" Text="Cancel" TextColor="#178FFE" Grid.Column="1" FontSize="{x:Static views:FontSizeView.CustomFontSizeMeMeMi}"
+             HorizontalTextAlignment="Start" VerticalTextAlignment="Center">
+        <Label.HorizontalOptions>
+          <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="StartAndExpand" WinPhone="StartAndExpand"></OnPlatform>
+        </Label.HorizontalOptions>
+        <Label.VerticalOptions>
+          <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+        </Label.VerticalOptions>
+      </Label>
+       <BoxView x:Name="Bx_Cancel" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1" BackgroundColor="Transparent"></BoxView>
+
+
+      <Label x:Name="Lbl_Title" Text="Add Audio" TextColor="Black" Grid.Column="2"
+            HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+        <Label.HorizontalOptions>
+          <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+        </Label.HorizontalOptions>
+        <Label.VerticalOptions>
+          <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+        </Label.VerticalOptions>
+      </Label>
+
+      <Label x:Name="Btn_Save" Text="Save"  TextColor="#178FFE" Grid.Column="3" FontSize="{x:Static views:FontSizeView.CustomFontSizeMeMeMi}"
+              HorizontalTextAlignment="End" VerticalTextAlignment="Center">
+        <Label.HorizontalOptions>
+          <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="EndAndExpand" WinPhone="EndAndExpand"></OnPlatform>
+        </Label.HorizontalOptions>
+        <Label.VerticalOptions>
+          <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+        </Label.VerticalOptions>
+      </Label>
+     <BoxView x:Name="Bx_Save" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="3"  BackgroundColor="Transparent"></BoxView>
+
+    </Grid>
+
+    <!--Seperator Line-->
+    <BoxView Color="Gray" Opacity="0.5" Grid.Row="1"/>
+
+    <Grid x:Name="GL_Audio" Grid.Row="2">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="5*"/>
+        <RowDefinition Height="10*"/>
+        <RowDefinition Height="10*"/>
+        <RowDefinition Height="10*"/>
+        <RowDefinition Height="40*"/>
+        <RowDefinition Height="10*"/>
+        <RowDefinition Height="10*"/>
+        <RowDefinition Height="5*"/>
+      </Grid.RowDefinitions>
+
+      <Label x:Name="Lbl_Title1" Text="Click below button to start record." TextColor="Black" Grid.Row="3"
+            HorizontalTextAlignment="Center">
+        <Label.HorizontalOptions>
+          <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+        </Label.HorizontalOptions>
+        <Label.VerticalOptions>
+          <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+        </Label.VerticalOptions>
+      </Label>
+
+      <Image x:Name="Img_Start" Source="audio_start.png" HeightRequest="50" WidthRequest="50" Grid.Row="4"
+             HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+
+      <Image x:Name="Img_Stop" Source="audio_stop.png" HeightRequest="50" WidthRequest="50" Grid.Row="4"
+             HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="False"/>
+
+      <Image x:Name="Img_Retake" Source="retake.png" HeightRequest="120" WidthRequest="120" Grid.Row="4"
+             HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="False"/>
+
+      <Grid x:Name="Gl_PreviewAudio" Grid.Row="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="55*"/>
+          <ColumnDefinition Width="45*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="Lbl_Play" Text="Click here to play" Grid.Row="0" Grid.Column="0" IsVisible="False"
+               HorizontalTextAlignment="End" TextColor="Black" FontSize="{x:Static colors:FontSizeView.CustomFontSizeMeMeSm}" VerticalTextAlignment="Center">
+          <Label.HorizontalOptions>
+            <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="EndAndExpand" WinPhone="EndAndExpand"></OnPlatform>
+          </Label.HorizontalOptions>
+          <Label.VerticalOptions>
+            <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+          </Label.VerticalOptions>
+        </Label>
+        <Image x:Name="Img_Play" Source="audio_play.png" HeightRequest="70" WidthRequest="70" Grid.Column="1" IsVisible="False" VerticalOptions="Center" HorizontalOptions="Start"/>
+      </Grid>
+
+      <Entry x:Name="Txt_AudioName" Placeholder="The Name of the Audio" Grid.Row="1" PlaceholderColor="Gray" TextColor="Black"
+              HorizontalTextAlignment="Center">
+        <Entry.VerticalOptions>
+          <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+        </Entry.VerticalOptions>
+      </Entry>
+
+      <Entry x:Name="Txt_AudioDescription" Placeholder="A Description of the Audio" Grid.Row="2" PlaceholderColor="Gray" TextColor="Black"
+             HorizontalTextAlignment="Center">
+        <Entry.VerticalOptions>
+          <OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+        </Entry.VerticalOptions>
+      </Entry>
+    </Grid>
+
+  </Grid>
+</ContentView>

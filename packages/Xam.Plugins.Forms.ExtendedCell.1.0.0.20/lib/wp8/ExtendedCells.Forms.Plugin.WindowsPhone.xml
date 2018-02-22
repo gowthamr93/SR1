@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExtendedCells.Forms.Plugin.WindowsPhone</name>
+    </assembly>
+    <members>
+        <member name="T:ExtendedCells.Forms.Plugin.WindowsPhone.ExtensionMethods.ColorExtensions">
+            <summary>
+            From Xam Forms Labs https://github.com/XLabs/Xamarin-Forms-Labs/blob/248cfcfc5b5803f5c3a157e51df57c08706a84ba/src/Forms/XLabs.Forms.WP8/Extensions/ColorExtensions.cs
+            </summary>
+        </member>
+        <member name="M:ExtendedCells.Forms.Plugin.WindowsPhone.Pages.NativeListviewControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ExtendedCells.Forms.Plugin.WindowsPhone.ExtendedTextCellRenderer">
+            <summary>
+            Two Column Cell
+            </summary>
+        </member>
+    </members>
+</doc>

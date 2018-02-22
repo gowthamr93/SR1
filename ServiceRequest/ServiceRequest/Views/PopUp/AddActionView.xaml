@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ServiceRequest.Views.PopUp.AddActionView"
+             xmlns:colors="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest">
+  <Grid BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" RowSpacing="0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="100*"/>
+    </Grid.RowDefinitions>
+    <ListView x:Name="Lstvw_Actions" Grid.Row="0" ItemsSource="{Binding ActionsGrouped}" GroupShortNameBinding = "{Binding Key}" IsGroupingEnabled="True" GroupDisplayBinding = "{Binding Key}"
+              ItemTapped="ActionsItemTapped">
+
+      <ListView.GroupHeaderTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Margin="0,20,0,0">
+              <Label Text="{Binding Key}" Margin="20,0,0,0" TextColor="Black" FontAttributes="Bold" FontSize="Small" > <!--VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"-->
+             <Label.VerticalOptions>
+					<OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+			  </Label.VerticalOptions>
+			 <Label.HorizontalOptions>
+				<OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="StartAndExpand" WinPhone="StartAndExpand"></OnPlatform>
+			  </Label.HorizontalOptions>
+				</Label>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.GroupHeaderTemplate>
+
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid HeightRequest="35">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="95*"/>
+                <RowDefinition Height="5*"/>
+              </Grid.RowDefinitions>
+              <Label Text="{Binding Description}" HorizontalTextAlignment="Center" Margin="20,5,0,0" TextColor="{x:Static colors:Styles.MainAccent}" LineBreakMode="TailTruncation"> <!--VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" -->
+               <Label.VerticalOptions>
+					<OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+			  </Label.VerticalOptions>
+			 <Label.HorizontalOptions>
+				<OnPlatform x:TypeArguments="LayoutOptions" iOS="FillAndExpand" Android="CenterAndExpand" WinPhone="CenterAndExpand"></OnPlatform>
+			  </Label.HorizontalOptions>
+							</Label>
+              <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0" Grid.Row="1" BackgroundColor="#EFEFEF" />
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+
+    </ListView>
+  </Grid>
+</ContentView>

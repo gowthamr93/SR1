@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ServiceRequest.Views.PopUp.RequestErrorPopup"
+             xmlns:appContext="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             BackgroundColor="{x:Static appContext:Styles.WindowBackground}">
+  <Grid Padding="10,10,10,10">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="4.9*" />
+      <RowDefinition Height="0.1*" />
+      <RowDefinition Height="75*" />
+    </Grid.RowDefinitions>
+    <Grid x:Name="GlTitle" Grid.Row="0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="10*" />
+        <ColumnDefinition Width="15*" />
+        <ColumnDefinition Width="45*" />
+        <ColumnDefinition Width="20*" />
+        <ColumnDefinition Width="10*" />
+      </Grid.ColumnDefinitions>
+      <Label x:Name="LblCancel" Text="Cancel" Grid.Column="1" TextColor="#3498db" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="{x:Static appContext:FontSizeView.CustomFontSizeSmMeMe}" VerticalOptions="FillAndExpand" />
+      <Label x:Name="LblTitle" Text="Request Error" TextColor="Black" Grid.Column="2" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="{x:Static appContext:FontSizeView.CustomFontSizeSmMeMe}" VerticalOptions="FillAndExpand" />
+      <Label x:Name="LblSend" Text="Send" Grid.Column="3" TextColor="#3498db" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontSize="{x:Static appContext:FontSizeView.CustomFontSizeSmMeMe}" VerticalOptions="FillAndExpand" />
+    </Grid>
+    <BoxView Color="Gray" Opacity="0.5" Grid.Row="1" />
+    <Grid Grid.Row="2">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="40*" />
+        <RowDefinition Height="1*" />
+        <RowDefinition Height="59*" />
+      </Grid.RowDefinitions>
+      <Grid x:Name="GlDebugInfo" Grid.Row="0">
+        <Grid.RowDefinitions>
+          <RowDefinition>
+            <RowDefinition.Height>
+              <OnPlatform x:TypeArguments="GridLength" iOS="10*" Android="10*" WinPhone="15*">
+              </OnPlatform>
+            </RowDefinition.Height>
+          </RowDefinition>
+          <RowDefinition>
+            <RowDefinition.Height>
+              <OnPlatform x:TypeArguments="GridLength" iOS="90*" Android="90*" WinPhone="85*">
+              </OnPlatform>
+            </RowDefinition.Height>
+          </RowDefinition>
+        </Grid.RowDefinitions>
+        <Label x:Name="LblDebugTitle" Grid.Row="0" Text="Debug Information" TextColor="Black" VerticalOptions="FillAndExpand" LineBreakMode="WordWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" HorizontalOptions="FillAndExpand">
+          <Label.Margin>
+            <OnPlatform x:TypeArguments="Thickness" iOS="0, 0, 0, 0" Android="5, 0, 0, 0" WinPhone="0, 0, 0, 0"/>
+          </Label.Margin>
+        </Label>
+        <!--<ScrollView Orientation="Vertical" Grid.Row="1">-->
+        <Editor x:Name="EdDebugInfo" Grid.Row="1" />
+        <!--</ScrollView>-->
+        <!--<Grid x:Name="Gl_SubDebugInfo" Grid.Row="1" Padding="10,10,10,10" BackgroundColor="White">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="50*" />
+						<RowDefinition Height="50*" />
+					</Grid.RowDefinitions>
+					<ScrollView Orientation="Both" Grid.Row="0">
+						<Label x:Name="LblError" TextColor="Black" VerticalOptions="FillAndExpand" LineBreakMode="WordWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" HorizontalOptions="FillAndExpand" />
+					</ScrollView>
+					<Grid x:Name="Gl_Content" Grid.Row="1">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="25*" />
+							<RowDefinition Height="25*" />
+						</Grid.RowDefinitions>
+						<Label x:Name="LblOfficerInfo" Grid.Row="0" TextColor="Black" VerticalOptions="FillAndExpand" LineBreakMode="WordWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" HorizontalOptions="FillAndExpand" />
+						<Label x:Name="LblDeviceInfo" Grid.Row="1" TextColor="Black" VerticalOptions="FillAndExpand" LineBreakMode="WordWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" HorizontalOptions="FillAndExpand" />
+					</Grid>
+				</Grid>-->
+      </Grid>
+      <Grid x:Name="GlUserInfo" Grid.Row="2">
+        <Grid.RowDefinitions>
+          <RowDefinition>
+            <RowDefinition.Height>
+              <OnPlatform x:TypeArguments="GridLength" iOS="5*" Android="10*" WinPhone="10*">
+              </OnPlatform>
+            </RowDefinition.Height>
+          </RowDefinition>
+          <RowDefinition>
+            <RowDefinition.Height>
+              <OnPlatform x:TypeArguments="GridLength" iOS="95*" Android="90*" WinPhone="90*">
+              </OnPlatform>
+            </RowDefinition.Height>
+          </RowDefinition>
+        </Grid.RowDefinitions>
+        <Label x:Name="LblUserTitle" Grid.Row="0" Text="User Information" TextColor="Black" VerticalOptions="FillAndExpand" LineBreakMode="WordWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" HorizontalOptions="FillAndExpand">
+          <Label.Margin>
+            <OnPlatform x:TypeArguments="Thickness" iOS="0, 0, 0, 0" Android="5, 0, 0, 0" WinPhone="0, 0, 0, 0"/>
+          </Label.Margin>
+        </Label>
+        <Editor x:Name="EdUserInfo" Grid.Row="1" />
+      </Grid>
+    </Grid>
+  </Grid>
+</ContentView>

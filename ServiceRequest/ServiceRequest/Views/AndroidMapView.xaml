@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ServiceRequest.Views.AndroidMapView"
+               xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             xmlns:btn="clr-namespace:ServiceRequest.Custom;assembly=ServiceRequest">
+
+  <ContentView.Content>
+    <Grid x:Name="Gl_Main">
+      <maps:Map x:Name="googleMap" />
+
+      <Grid Grid.Column="0" Grid.Row="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="40" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="1*"/>
+          <ColumnDefinition Width="99*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackLayout Spacing="0" Grid.Column="1" Grid.Row="0" Orientation="Horizontal"
+                     HorizontalOptions="StartAndExpand">
+          <btn:SRiButton x:Name="BtnMap" Text="Map" BorderColor="Gray" BorderWidth="1" BackgroundColor="Silver"
+                  TextColor="Black" VerticalOptions="Center" FontSize="Small" WidthRequest="80" HeightRequest="35"/>
+
+          <btn:SRiButton x:Name="BtnSatellite" Text="Satellite" BorderColor="Gray" BorderWidth="1"
+                  BackgroundColor="Silver" TextColor="Black" VerticalOptions="Center" FontSize="Small" WidthRequest="80" HeightRequest="35"/>
+        </StackLayout>
+      </Grid>
+
+    </Grid>
+  </ContentView.Content>
+</ContentView>

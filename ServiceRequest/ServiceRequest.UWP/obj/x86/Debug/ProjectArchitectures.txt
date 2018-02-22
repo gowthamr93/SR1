@@ -1,0 +1,7 @@
+C:\CP 18_July_17\ServiceRequest\ServiceRequest\ServiceRequest\client\client.csproj;neutral
+C:\CP 18_July_17\ServiceRequest\ServiceRequest\ServiceRequest\client\client.csproj;neutral
+C:\CP 18_July_17\ServiceRequest\ServiceRequest\ServiceRequest\OnSite\OnSite.csproj;neutral
+C:\CP 18_July_17\ServiceRequest\ServiceRequest\ServiceRequest\OnSite\OnSite.csproj;neutral
+C:\CP 18_July_17\ServiceRequest\ServiceRequest\ServiceRequest\OnSite\OnSite.csproj;neutral
+C:\CP 18_July_17\ServiceRequest\ServiceRequest\ServiceRequest\ServiceRequest.UWP\ServiceRequest.UWP.csproj;x86
+C:\CP 18_July_17\ServiceRequest\ServiceRequest\ServiceRequest\ServiceRequest\ServiceRequest.csproj;neutral

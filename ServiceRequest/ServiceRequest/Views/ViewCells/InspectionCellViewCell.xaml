@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:appContext="clr-namespace:ServiceRequest.AppContext;assembly=ServiceRequest"
+             x:Class="ServiceRequest.Views.ViewCells.InspectionCellViewCell">
+  <Grid HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="30*"></RowDefinition>
+      <RowDefinition Height="29*"></RowDefinition>
+      <RowDefinition Height="1*"></RowDefinition>
+    </Grid.RowDefinitions>
+    <Label Text="{Binding GroupDetails}"
+            Grid.Row="0" Grid.Column="0"
+            TextColor="Black"
+            FontSize="{x:Static appContext:FontSizeView.CustomFontSizeSmSmMi}"
+           Margin="5,0,10,0"
+            HorizontalTextAlignment="Start" VerticalTextAlignment="End"
+            VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand"
+           LineBreakMode="TailTruncation"/>
+
+    <Grid Grid.Row="1" Grid.Column="0" HeightRequest="30" Margin="5,0,0,0"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" RowSpacing="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="100*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="50*" />
+        <ColumnDefinition Width="38*" />
+        <ColumnDefinition Width="12*" />
+      </Grid.ColumnDefinitions>
+      <Label Text="Target Response"
+             Grid.Row="0" Grid.Column="0"
+             TextColor="Gray" FontSize="{x:Static appContext:FontSizeView.CustomFontSizeSmSmMi}"
+             VerticalOptions="Center" HorizontalOptions="Start"/>
+      <Label Text="{Binding TargetResponseDate}"
+             Grid.Row="0" Grid.Column="1"
+             TextColor="Gray" FontSize="{x:Static appContext:FontSizeView.CustomFontSizeSmSmMi}"
+             VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
+      <Image Grid.Column="2" Aspect="AspectFill"  HeightRequest="17" WidthRequest="17"
+           VerticalOptions="Center" HorizontalOptions="Start" Margin="0,0,0,0" Source="{Binding UploadStatusImage}" />
+    </Grid>
+    <BoxView Grid.Row="2" BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="FillAndExpand" IsVisible="{Binding GrayLine}">
+    <BoxView.Opacity>
+	    	<OnPlatform x:TypeArguments="x:Double" iOS="0" Android="5" WinPhone="5"></OnPlatform>
+	</BoxView.Opacity>
+	</BoxView>
+  </Grid>
+</ViewCell>
